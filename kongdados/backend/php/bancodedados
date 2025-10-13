@@ -1,0 +1,52 @@
+<?php
+include_once('config.php');
+
+// Verificar se o formulário foi enviado
+if (isset($_POST['submit'])) {
+    // Verifique se os dados necessários foram enviados
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+    $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
+
+    // Verificar se todos os campos foram preenchidos
+    if ($nome && $email && $senha && $telefone) {
+        // Evitar SQL Injection: Use prepared statements
+        $stmt = $conexao->prepare("INSERT INTO kongdados(nome, email, senha, telefone) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $nome, $email, $senha, $telefone);
+        
+        // Execute a consulta
+        if ($stmt->execute()) {
+            echo "Cadastro realizado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar!";
+        }
+        
+        // Fechar a declaração
+        $stmt->close();
+    } else {
+        echo "Por favor, preencha todos os campos.";
+    }
+}
+?>
+
+<?php
+      $dbHost = 'Localhost';
+      $dbUsername = 'root';
+      $dbPassword = '';
+      $dbName = 'kongdados';
+
+
+      $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+
+    // if ($conexao->connect_errno)
+    // {
+    //    echo "Erro";
+    // }
+    // else
+    // {
+    //    echo "Conexão efetuada com sucesso";
+    // }
+
+?>

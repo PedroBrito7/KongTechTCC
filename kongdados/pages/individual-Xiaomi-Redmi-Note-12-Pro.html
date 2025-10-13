@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Xiaomi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        
+        color: #348bea;
+    }
+
+    .bg-principal{
+        background-color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+     
+    }
+
+
+
+        .product-page {
+            margin-top: 30px;
+        }
+
+        .breadcrumb {
+            background: none;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: ">";
+            padding: 0 5px;
+            color: #6c757d;
+        }
+
+        /* Estilo da imagem com efeito de zoom */
+        .product-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease; /* Transição suave para o zoom */
+        }
+
+        .product-image:hover img {
+            transform: scale(1.2); /* Efeito de zoom */
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .price-box h2 {
+            font-size: 30px;
+            color: #348bea;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 15px;
+            transition: 0.3s ease;
+            width: 100%;
+            border: none; /* Remover a borda preta */
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        .shipping {
+            margin-top: 20px;
+        }
+
+        .shipping input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+
+        .shipping button {
+            background-color: #348bea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .shipping-result {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+
+        .related-products {
+            margin-top: 40px;
+        }
+
+        .related-product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+            padding: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .related-product:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .related-product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+
+        .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        display: none;
+    }
+
+    .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .coupon-section {
+            margin-top: 30px;
+        }
+
+        /* Estilo do preço com desconto */
+        .preco-com-desconto {
+            font-size: 24px;
+            color: #348bea;
+            font-weight: bold;}
+
+
+            .product-description {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-header {
+            font-weight: bold;
+            color: #348bea;
+        }
+
+        .toggle-description {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+    </style>
+</head>
+<body style="background-color: #efefef;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <img src="logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px">
+    
+          <div class="collapse navbar-collapse" id="nav-toggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+      <!-- Primeiro dropdown (Iphones) -->
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Apple</a>
+      <div class="dropdown-menu">
+          <!-- Outros modelos de iPhones -->
+          <a href="pagina-iphone-1.html" class="dropdown-item">iPhones</a>
+          <a href="pagina-macbook.html" class="dropdown-item">Mac</a>
+          <a href="pagina-apple-watch.html" class="dropdown-item">Watch</a>
+    
+          <a href="pagina-acessorios-apple.html" class="dropdown-item">Acessórios</a>
+      </div>
+    </li>
+    
+                  <!-- Segundo dropdown (Samsung) -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Android</a>
+          <div class="dropdown-menu">
+              <!-- Outros modelos de iPhones -->
+              <a href="pagina-samsung.html" class="dropdown-item">Samsung</a>
+              <a href="pagina-motorola.html" class="dropdown-item">Motorola</a>
+              <a href="pagina-xiaomi.html" class="dropdown-item">Xiaomi</a>
+    
+              <a href="pagina-android-1.html" class="dropdown-item">Androids</a>
+          </div>
+        </li>
+    
+              <!-- Terceiro dropdown -->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mais produtos</a>
+                <div class="dropdown-menu">
+                  <a href="pagina-notebook.html" class="dropdown-item">Notebooks</a>
+                  <a href="pagina-tv.html" class="dropdown-item">TV´s</a>
+                  <a href="pagina-som.html" class="dropdown-item">Áudio</a>
+                  <a href="pagina-game.html" class="dropdown-item">Gaming</a>
+                </div>
+              </li>
+    
+            </ul>
+    
+            <!-- Formulário de busca centralizado -->
+            <form class="navbar-search" role="Pesquisar">
+              <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+              <button class="btn btn-outline-primary" type="submit">
+                <i class="fas fa-search"></i> 
+              </button>
+            </form>
+    
+             <!-- Ícones do lado direito: Carrinho e Login -->
+             <div class="navbar-icons">
+                <a href="#" class="nav-link" title="Carrinho">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="loginecadastro2.html" class="nav-link" title="Login">
+                  <i class="fas fa-user"></i>
+                </a>
+              </div>
+      
+    
+          </div>
+        </div>
+      </nav>
+
+    <div class="container product-page">
+        <!-- Breadcrumb navigation -->
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="index-site.html">Home</a>
+            <a class="breadcrumb-item" href="pagina-xiaomi.html">Xiaomi</a>
+            <span class="breadcrumb-item active">Xiaomi Redmi Note 10S (128GB)</span>
+        </nav>
+
+
+
+
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-md-6">
+                <div class="product-image">
+                    <img src="fotos xiaomi/redmi-note-10s.png" alt="Xiaomi Redmi 13C">
+                </div>
+            </div>
+            
+
+
+            
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <div class="product-details">
+                    <h1 class="cor-principal fs-2">Xiaomi Redmi Note 10S (128GB) -  Branco </h1>
+                    <p class="text-muted"><i class="fas fa-check-circle text-success"></i> Disponível para entrega</p>
+
+                    <div class="price-box">
+                        <p>Preço original: <del>R$ 2799,99</del></p>
+                        <h2>R$ 2.299,99 no Pix</h2>
+                        <p class="text-muted">ou R$ 2.299,99 em até 10x de R$ 229,99 sem juros</p>
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Shipping Section -->
+                    <div class="shipping mt-4">
+                        <label for="cep">Frete e prazo de entrega</label>
+                        <div class="d-flex">
+                            <input type="text" id="cep" placeholder="Informe seu CEP" class="form-control">
+                            <button class="btn btn-primary ms-2" id="calcular-frete">Calcular</button>
+                        </div>
+                        <div class="shipping-result mt-2" id="resultado-frete">
+                            <!-- Resultado do frete será exibido aqui -->
+                        </div>
+                    </div>
+
+
+
+
+                           <!-- Coupon Section -->
+                           <div class="coupon-section">
+                            <label>Insira um cupom de desconto</label>
+                            <div class="d-flex">
+                                <input type="text" id="cupom" placeholder="Digite o cupom" class="form-control">
+                                <button class="btn btn-success ms-2" id="aplicar-cupom">Aplicar</button>
+                            </div>
+                            <p id="mensagem-cupom" class="text-success mt-2" style="display:none;">Cupom aplicado com sucesso! Desconto de 10%!</p>
+                            <div class="mt-2">
+                                 <span id="preco-desconto" class="preco-com-desconto" style="display:none;">R$ 0,00</span>
+                            </div>
+                        </div>
+
+
+
+                    <!-- Buy Buttons -->
+                    <div class="d-flex flex-column mt-4">
+                        <a href="#" class="mb-2">
+                            <button class="buy-btn"><i class="fas fa-shopping-cart"></i> COMPRAR AGORA</button>
+                        </a>
+                        <a href="#">
+                            <button class="buy-btn bg-primary text-white"><i class="fas fa-shopping-bag"></i> ADICIONAR À SACOLA</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+         <!-- Product Description -->
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="product-description">
+                    <h5 class="description-header">Descrição</h5>
+                    <p id="short-description">O Redmi Note 10S é um smartphone com bom desempenho, tela AMOLED e câmeras versáteis, oferecendo qualidade e bateria duradoura.</p>
+                    <span class="toggle-description" onclick="toggleDescription()">Leia mais...</span>
+                    <p id="full-description" style="display:none;">A bateria de 5.000mAh é um dos pontos fortes do dispositivo, oferecendo autonomia para mais de um dia de uso moderado. Embora o carregamento seja de 10W, a grande capacidade de bateria é uma vantagem considerável. O Redmi 13C roda o MIUI 14 baseado no Android 13, trazendo uma interface intuitiva e recursos de software otimizados para o hardware do aparelho.</p>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <br><br><br><br><br>
+
+        <!-- Related Products Section -->
+        <div class="related-products">
+
+
+          <div class="jumbotron  mt-2 mb-3">
+            <h3 class=" text-primary text-center ">Produtos selecionados para você:</h3>
+          
+          
+          </div>
+
+          
+          <div class="container">
+            <div class="row">
+            <div class="col-md-4">
+                <div class="related-product">
+                    <a href="#">
+                        <img src="fotos iphone/iphone12-pro-max.png" alt="Produto Relacionado 1">
+                    </a>
+                    <p class="text-primary">Apple Iphone 12 Pro Max</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="related-product">
+                    <a href="#">
+                        <img src="fotos iphone/iphone11-pro.png" alt="Produto Relacionado 2">
+                    </a>
+                    <p class="text-primary">Apple Iphone 11 Pro</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="related-product">
+                    <a href="#">
+                        <img src="fotos iphone/iphone-15-pro.png" alt="Produto Relacionado 3">
+                    </a>
+                    <p class="text-primary">Apple Iphone 15 Pro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    <br><br><br><br><br><br>
+
+   <!-- Rodapé -->
+<footer class="bg-principal text-light pt-5 pb-4">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <!-- Seção Sobre -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Sobre Nós</h5>
+                <p>Oferecemos as melhores marcas e serviços para todos os clientes, com uma experiência interativa e inovadora através de nossa roleta de marcas.</p>
+            </div>
+  
+            <!-- Links Úteis -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Links Úteis</h5>
+                <p><a href="#" class="text-light text-decoration-none">Início</a></p>
+                <p><a href="#" class="text-light text-decoration-none">Marcas</a></p>
+                <p><a href="#" class="text-light text-decoration-none">Promoções</a></p>
+                <p><a href="#" class="text-light text-decoration-none">Contato</a></p>
+            </div>
+  
+            <!-- Redes Sociais -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Redes Sociais</h5>
+                <p>
+                    <a href="#" class="text-light me-3 text-decoration-none">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                </p>
+                <p>
+                    <a href="#" class="text-light me-3 text-decoration-none">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </p>
+                <p>
+                    <a href="#" class="text-light me-3 text-decoration-none">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </p>
+                <p>
+                    <a href="#" class="text-light me-3 text-decoration-none">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </p>
+            </div>
+  
+            <!-- Contato -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Contato</h5>
+                <p><i class="fas fa-home me-2"></i> R. Bueno Brandão, 76</p>
+                <p><i class="fas fa-envelope me-2"></i> info@exemplo.com</p>
+                <p><i class="fas fa-phone me-2"></i> +55 11 1234-5678</p>
+                <p><i class="fas fa-print me-2"></i> +55 11 9876-5432</p>
+            </div>
+        </div>
+  
+        <!-- Linha de divisão -->
+        <hr class="mb-4">
+  
+        <!-- Direitos Autorais -->
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+                <p class="text-center text-md-left">© 2024 Todos os direitos reservados:
+                    <a href="#" class="text-light text-decoration-none">
+                        <strong> kongtech.com</strong>
+                    </a>
+                </p>
+            </div>
+  
+            <div class="col-md-5 col-lg-4">
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-light"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-light"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-light"><i class="fab fa-google-plus-g"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-light"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-light"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById('calcular-frete').addEventListener('click', function() {
+        var frete = (Math.random() * 50 + 10).toFixed(2); // Gerando valor de frete aleatório entre R$ 10,00 e R$ 60,00
+        document.getElementById('resultado-frete').innerText = 'Frete estimado: R$ ' + frete;
+    });
+
+    document.getElementById('aplicar-cupom').addEventListener('click', function() {
+            var precoOriginal = 949.99; // Preço original
+            var cupom = document.getElementById('cupom').value;
+            
+            // Verifica se o cupom inserido é o correto
+            if (cupom === 'PRIMEIRACOMPRA10') {
+                var desconto = precoOriginal * 0.1; // Calcula 10% de desconto
+                var precoComDesconto = (precoOriginal - desconto).toFixed(2); // Preço final com desconto
+                
+                // Exibe a mensagem de sucesso e o valor atualizado
+                document.getElementById('mensagem-cupom').style.display = 'block';
+                document.getElementById('preco-desconto').style.display = 'block';
+                document.getElementById('preco-desconto').innerText = 'Preço com desconto: R$ ' + precoComDesconto;
+
+                // Opcional: Atualizar o preço principal para o valor com desconto
+                document.getElementById('preco-final').innerText = 'R$ ' + precoComDesconto + ' no Pix';
+            } else {
+                // Se o cupom estiver incorreto, mostrar uma mensagem de erro
+                document.getElementById('mensagem-cupom').style.display = 'none';
+                alert('Cupom inválido! Tente novamente.');
+            }
+        });
+
+
+        function toggleDescription() {
+            const shortDesc = document.getElementById('short-description');
+            const fullDesc = document.getElementById('full-description');
+            const toggleText = document.querySelector('.toggle-description');
+
+            if (fullDesc.style.display === "none") {
+                fullDesc.style.display = "block";
+                toggleText.textContent = "Leia menos...";
+            } else {
+                fullDesc.style.display = "none";
+                toggleText.textContent = "Leia mais...";
+            }
+        }
+
+        
+</script>
+
+</body>
+</html>

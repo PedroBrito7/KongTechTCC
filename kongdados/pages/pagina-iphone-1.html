@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kong Tech</title>
+     <link rel="icon" href="fivecon.png" type="image/x-icon">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link href="../css/bootstrap-icons.css" rel="stylesheet">
+    <link  rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+
+      /* Estilo do Rodapé */
+      .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+
+      .preco-antigo {
+       
+      font-size: 1.5rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .preco-novo {
+     
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .desconto {
+     
+      font-size: 1rem;
+      font-weight: 600;
+      color: #dc3545;
+      
+    }
+
+
+
+
+    .card-title {
+            font-size: 1.25rem; /* Tamanho do título do cartão */
+            white-space: nowrap; /* Mantém o título em uma única linha */
+            overflow: hidden; /* Esconde o texto que exceder o limite */
+            text-overflow: ellipsis; /* Adiciona reticências ao final do texto excedente */
+        }
+
+        .card-text {
+            color: #333; /* Cor do texto */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limita o texto a 3 linhas em navegadores WebKit */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+
+    .card {
+            transition: transform 0.2s;
+            overflow: hidden; /* Garante que nada excedente saia do card */
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .badge {
+            font-size: 0.8rem;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        background-color: #348bea;
+        color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+      }
+
+      .navbar {
+            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+        }
+
+        /* Estilo do Rodapé */
+        .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+    </style>
+   </head>
+
+   <body style="background-color: #efefef;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <a href="index.html"><img src="../logo-marcas/logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px"></a>
+  
+        <div class="collapse navbar-collapse" id="nav-toggler">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+    <!-- Primeiro dropdown (Iphones) -->
+  <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Apple</a>
+    <div class="dropdown-menu">
+        <!-- Outros modelos de iPhones -->
+        <a href="pagina-iphone-1.html" class="dropdown-item">iPhones</a>
+        <a href="pagina-macbook.html" class="dropdown-item">Mac</a>
+        <a href="pagina-apple-watch.html" class="dropdown-item">Watch</a>
+  
+        <a href="pagina-acessorios-apple.html" class="dropdown-item">Acessórios</a>
+    </div>
+  </li>
+  
+                <!-- Segundo dropdown (Samsung) -->
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Android</a>
+        <div class="dropdown-menu">
+            <!-- Outros modelos de iPhones -->
+            <a href="pagina-samsung.html" class="dropdown-item">Samsung</a>
+            <a href="pagina-motorola.html" class="dropdown-item">Motorola</a>
+            <a href="pagina-xiaomi.html" class="dropdown-item">Xiaomi</a>
+  
+            <a href="pagina-android-1.html" class="dropdown-item">Androids</a>
+        </div>
+      </li>
+  
+            <!-- Terceiro dropdown -->
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mais produtos</a>
+              <div class="dropdown-menu">
+                <a href="pagina-notebook.html" class="dropdown-item">Notebooks</a>
+                <a href="pagina-tv.html" class="dropdown-item">TV´s</a>
+                <a href="pagina-som.html" class="dropdown-item">Áudio</a>
+                <a href="pagina-game.html" class="dropdown-item">Gaming</a>
+              </div>
+            </li>
+  
+          </ul>
+  
+          <!-- Formulário de busca centralizado -->
+          <form class="navbar-search" role="Pesquisar">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-primary" type="submit">
+              <i class="fas fa-search"></i> 
+            </button>
+          </form>
+  
+           <!-- Ícones do lado direito: Carrinho e Login -->
+           <div class="navbar-icons">
+              <a href="carrinho.html" class="nav-link" title="Carrinho">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+              <a href="loginecadastro2.php" class="nav-link" title="Login">
+                <i class="fas fa-user"></i>
+              </a>
+            </div>
+    
+  
+        </div>
+      </div>
+    </nav>
+        <br><br>
+    <div class="container-fluid">
+        <div id="carouselExampleRide" class="carousel slide margin-carrossel" data-bs-ride="carousel" data-bs-interval="1000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../assets/images/aleatorias/1900XFRETE.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Promoção de Verão">
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/aleatorias/cupom1900x.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Frete Grátis">
+                </div>
+        
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="page-content">
+        <div class="container mt-5">
+  
+            <div class="row">
+          
+          
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                  <div class="card">
+                    <a href="individual-iphone-15.html"><img src="../produtos/iphone/iphone15.png" class="card-img-top img-fluid" alt="Iphone 15"></a>
+                        <div class="card-body">
+                            <h5 class="card-title m-2">Apple iPhone 15 (128 GB) — Verde</h5>
+                            <span class="badge bg-success m-2">ABAIXOU!</span>
+                            <p class="card-text small p-2">O Apple iPhone 15 (128 GB) Verde combina design elegante e desempenho potente. Capture momentos incríveis com sua câmera avançada!</p>
+                            <p>
+                                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.499,99</strong></span>
+                                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 5.099,00</span>
+                            </p>
+                            <p class="text-success m-2">Economize <strong>R$ 299,99</strong>!</p>
+                            <div class="btn-container">
+                                <a href="individual-iphone-15.html" class="btn btn-primary m-2">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+          
+          
+          <!--Card produto 2-->
+          
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-iphone-15-pro.html"><img src="../produtos/iphone/iphone-15-pro.png" class="card-img-top"" alt="Produto 1"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Apple iPhone 15 Pro (256 GB) - Titânio </h5>
+                    <span class="badge bg-success m-2">ABAIXOU!</span>
+                    <p class="card-text small p-2">iPhone 15 Pro (256 GB) em titânio: leve, potente com chip A17 Pro, câmeras avançadas e tela Super Retina XDR. Inovador e estiloso.</p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 7.599,00</strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.099,00</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 2.500,00</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-iphone-15-pro.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          
+          <!--Card produto 3-->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-iphone-15-pro-max.html"><img src="../produtos/iphone/iphone15-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Apple iPhone 15 Pro Max (256 GB)</h5>
+                    <span class="badge bg-success m-2">ABAIXOU!</span>
+                    <p class="card-text small p-2">iPhone 15 Pro Max (256 GB) em titânio azul: desempenho robusto com chip A17 Pro, câmeras de alta qualidade e tela Super Retina XDR. </p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 9.099,00 </strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.999,00</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 1.900,00</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-iphone-15-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          
+          
+          <!--Card produto 15 plus-->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-iphone-15-plus.html"><img src="../produtos/iphone/iphone15-plus.png"class="card-img-top" alt="Produto 1"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Apple iPhone 15 Plus (128GB) - Azul</h5>
+                    <span class="badge bg-success m-2">ABAIXOU!</span>
+                    <p class="card-text small p-2">iPhone 15 Plus (128 GB) em azul: design moderno, câmeras poderosas e desempenho otimizado com chip A16. Perfeito para quem busca mais tela e estilo.</p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$  6.199,00</strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 7.282,90</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 1.083,99</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-iphone-15-plus.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          
+          <!--Card produto 4-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+              <a href="individual-iphone-14.html"><img src="../produtos/iphone/iphone14.png" class="card-img-top" alt="Produto 1"></a>
+              <div class="card-body">
+                  <h5 class="card-title m-2">Apple iPhone 14 (128 GB) – Azul</h5>
+                  <span class="badge bg-success m-2">ABAIXOU!</span>
+                  <p class="card-text small p-2">iPhone 14 (128 GB) em azul: design elegante, câmeras excelentes e desempenho eficiente com chip A15. Ideal para uso diário com estilo.</p>
+                  <p>
+                      <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.479,99</strong></span>
+                      <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 4999,99</span>
+                  </p>
+                  <p class="text-success m-2">Economize <strong>R$ 519,99</strong>!</p>
+                  <div class="btn-container">
+                      <a href="individual-iphone-14.html" class="btn btn-primary m-2">Comprar</a>
+                  </div>
+              </div>
+          </div>
+          </div>
+          
+          
+          <!--Card produto 5-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+            <a href="individual-iphone-14-plus.html"><img src="../produtos/iphone/iphone14-plus.png"class="card-img-top" alt="Produto 1"></a>
+            <div class="card-body">
+                <h5 class="card-title m-2">Apple iPhone 14 Plus (512GB) - Estelar</h5>
+                <span class="badge bg-success m-2">ABAIXOU!</span>
+                <p class="card-text small p-2">iPhone 14 Plus (512 GB) Estelar: amplo armazenamento, design elegante e câmeras avançadas com chip A15. Ideal para quem busca performance e estilo.</p>
+                <p>
+                    <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 6.399,00</strong></span>
+                    <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 11.599,00</span>
+                </p>
+                <p class="text-success m-2">Economize <strong>R$ 5.199,99</strong>!</p>
+                <div class="btn-container">
+                    <a href="individual-iphone-14-plus.html" class="btn btn-primary m-2">Comprar</a>
+                </div>
+            </div>
+          </div>
+          </div>
+          
+          
+          <!--Card produto 6-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+           <a href="individual-iphone-14-pro.html"><img src="../produtos/iphone/iphone14-pro.png" class="card-img-top" alt="Produto 1"></a>
+            <div class="card-body">
+                <h5 class="card-title m-2">Apple iPhone 14 Pro (1TB) - Roxo</h5>
+                <span class="badge bg-success m-2">ABAIXOU!</span>
+                <p class="card-text small p-2">O iPhone 14 Pro 1TB Roxo-profundo combina design elegante e tela Super Retina XDR. Com chip A16 Bionic, oferece desempenho incrível e amplo armazenamento.</p>
+                <p>
+                    <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 8.699,00</strong></span>
+                    <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 9.999,00</span>
+                </p>
+                <p class="text-success m-2">Economize <strong>R$ 1.299,99</strong>!</p>
+                <div class="btn-container">
+                    <a href="individual-iphone-14-pro.html" class="btn btn-primary m-2">Comprar</a>
+                </div>
+            </div>
+          </div>
+          </div>
+          
+          
+          <!--Card produto 7-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+            <a href="individual-iphone-14-pro-max.html"><img src="../produtos/iphone/iphone14-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+            <div class="card-body">
+                <h5 class="card-title m-2">Apple iPhone 14 Pro Max (256GB) </h5>
+                <span class="badge bg-success m-2">ABAIXOU!</span>
+                <p class="card-text small p-2">O iPhone 14 Pro Max 256GB Dourado tem design luxuoso e tela de 6,7 polegadas. Com chip A16 Bionic, oferece alto desempenho e bastante espaço.</p>
+                <p>
+                    <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 8.299,00</strong></span>
+                    <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 9.999,99</span>
+                </p>
+                <p class="text-success m-2">Economize <strong>R$ 1.700,99</strong>!</p>
+                <div class="btn-container">
+                    <a href="individual-iphone-14-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+                </div>
+            </div>
+          </div>
+          </div>
+          
+          
+          <!--Card produto 8-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+            <a href="individual-iphone-13.html"><img src="../produtos/iphone/iphone13.png"class="card-img-top" alt="Produto 1"></a>
+            <div class="card-body">
+                <h5 class="card-title m-2">Apple Iphone 13 (128GB) - Estelar</h5>
+                <span class="badge bg-success m-2">ABAIXOU!</span>
+                <p class="card-text small p-2">Desempenho poderoso com chip A15 Bionic, câmera dupla com modo Noturno e display Super Retina XDR. Duração de bateria incrível para o dia todo.</p>
+                <p>
+                    <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 3499,99</strong></span>
+                    <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 3999,99</span>
+                </p>
+                <p class="text-success m-2">Economize <strong>R$ 499,99</strong>!</p>
+                <div class="btn-container">
+                    <a href="individual-iphone-13.html" class="btn btn-primary m-2">Comprar</a>
+                </div>
+            </div>
+          </div>
+          </div>
+          
+          
+          <!--Card produto 9-->
+          <div class="col-md-4 mb-4">
+          <div class="card">
+            <a href="individual-iphone-13-mini.html"><img src="../produtos/iphone/iphone13-mini.png"class="card-img-top" alt="Produto 1"></a>
+            <div class="card-body">
+                <h5 class="card-title m-2">iPhone 13 mini (128GB) - Azul </h5>
+                <span class="badge bg-success m-2">ABAIXOU!</span>
+                <p class="card-text small p-2">O iPhone 13 mini 128GB Azul tem design compacto e tela de 5,4 polegadas. Com chip A15 Bionic, oferece ótimo desempenho e armazenamento.</p>
+                <p>
+                    <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 3.099,00</strong></span>
+                    <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 3.499,99</span>
+                </p>
+                <p class="text-success m-2">Economize <strong>R$ 400,99</strong>!</p>
+                <div class="btn-container">
+                    <a href="individual-iphone-13-mini.html" class="btn btn-primary m-2">Comprar</a>
+                </div>
+            </div>
+          </div>
+          </div>
+          
+          
+          
+          <!--Card produto 11-->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-iphone-13-pro.html"><img src="../produtos/iphone/iphone13-pro.png"class="card-img-top" alt="Produto 1"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Apple iPhone 13 Pro (256 GB) - Sierra</h5>
+                    <span class="badge bg-info m-2">LIMITADO</span>
+                    <p class="card-text small p-2">O iPhone 13 Pro 256GB Azul Sierra tem design elegante e tela de 6,1 polegadas. Com chip A15 Bionic, oferece alto desempenho e amplo espaço.</p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>10.499,00</strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.999,99</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 499,99</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-iphone-13-pro.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+                
+          
+          
+          
+              <!--Card produto 12-->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-iphone-13-pro-max.html"><img src="../produtos/iphone/iphone13-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Iphone 13 Pro Max (256gb) - Gold</h5>
+                    <span class="badge bg-danger m-2">SEMINOVO</span>
+                    <p class="card-text small p-2">O iPhone 13 Pro 256GB Azul Sierra tem design elegante e tela de 6,1 polegadas. Com chip A15 Bionic, oferece alto desempenho e amplo espaço.</p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.859,99 </strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 5.399,99</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 539,99</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-iphone-13-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+          </div>
+   
+
+
+
+    
+      
+      
+     
+      </div>
+      
+  
+</div>
+</div>
+  
+  <!-- Rodapé -->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Ícones de Redes Sociais -->
+            <div class="col-12 col-md-4 social-icons text-center">
+                <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+            </div>
+            
+            <!-- Texto do Rodapé -->
+            <div class="col-12 col-md-4 ">
+                <p>&copy; 2024 KongTech. Todos os direitos reservados.</p>
+            </div>
+            <br>
+ <br>
+            <div style="margin-top: 50px;" class="col-12 col-md-4 ">
+                <p>&copy; Site da desenvolvedora</p>
+                <a href="aresdev.html"><img src="../logo-marcas/logotipoares.png" style="max-width: 80px;"></a>
+            </div>
+            
+            <!-- Link para Documentação (à direita) -->
+            <div style="margin-left: 450px;" class="col-12 col-md-4 text-center text-md-right">
+                <a href="documentacao.pdf" class="documentation-link">Documentação <i class="fas fa-book"></i></a>
+            </div>
+        </div>
+  
+        <!-- Linha Divisória -->
+        <hr style="border-color: #ffffff; margin-top: 40px;">
+  
+        <!-- Área de Contatos (ajustada) -->
+        <div class="contact-info">
+            <h5>Informações de Contato</h5><br>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-map-marker-alt"></i> R. Bueno Brandão, 74 - Guarulhos (SP)   
+                 </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-phone-alt"></i> (11) 98820-2529
+                </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-envelope"></i> kongtechsuporte@gmail.com
+                </div>
+                <div class="col-12 col-md-4 institutional-links text-center">
+                  <a href="institucionalmae.html"><i class="fas fa-building"></i> Páginas Institucionais</a>
+              </div>
+            </div>
+        </div>
+       
+  </footer>
+  
+  
+
+    
+    
+    
+    
+    
+    
+
+
+  <script src="../js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+</html>

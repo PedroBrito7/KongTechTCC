@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kong Tech - Carrinho</title>
+  <link rel="icon" href="fivecon.png" type="image/x-icon">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+         /* Estilo do Rodapé */
+         .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+       .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        
+        color: #348bea;
+    }
+
+    .bg-principal{
+        background-color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+     
+    }
+
+
+
+        .product-page {
+            margin-top: 30px;
+        }
+
+        .breadcrumb {
+            background: none;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: ">";
+            padding: 0 5px;
+            color: #6c757d;
+        }
+
+        /* Estilo da imagem com efeito de zoom */
+        .product-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease; /* Transição suave para o zoom */
+        }
+
+        .product-image:hover img {
+            transform: scale(1.2); /* Efeito de zoom */
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .price-box h2 {
+            font-size: 30px;
+            color: #348bea;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 15px;
+            transition: 0.3s ease;
+            width: 100%;
+            border: none; /* Remover a borda preta */
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        .shipping {
+            margin-top: 20px;
+        }
+
+        .shipping input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+
+        .shipping button {
+            background-color: #348bea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .shipping-result {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+
+        .related-products {
+            margin-top: 40px;
+        }
+
+        .related-product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+            padding: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .related-product:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .related-product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+
+        .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        display: none;
+    }
+
+    .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .coupon-section {
+            margin-top: 30px;
+        }
+
+        /* Estilo do preço com desconto */
+        .preco-com-desconto {
+            font-size: 24px;
+            color: #348bea;
+            font-weight: bold;}
+             /* Estilização da barra de progresso */
+        .step {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .step .step-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 3px solid lightgray;
+        }
+
+        .step .step-item.active {
+            color: #007bff;
+            border-bottom: 3px solid #007bff;
+            font-weight: bold;
+        }
+
+        .step .step-item.completed {
+            color: green;
+            border-bottom: 3px solid green;
+            font-weight: bold;
+        }
+
+        .summary-box {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-box h5 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .bg-gray {
+      background-color: #ddd !important; /* Cinza claro do Bootstrap */
+    }
+
+    /* Sombra na tabela */
+    .shadow-table {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra leve */
+      border-radius: 8px; /* Canto arredondado para um visual moderno */
+    }
+    .shipping {
+            margin-top: 20px;
+        }
+
+        .shipping input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+
+        .shipping button {
+            background-color: #348bea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .shipping-result {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body style="background-color: #efefef;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <a href="index.html"><img src="../logo-marcas/logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px"></a>
+  
+        <div class="collapse navbar-collapse" id="nav-toggler">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+    <!-- Primeiro dropdown (Iphones) -->
+  <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Apple</a>
+    <div class="dropdown-menu">
+        <!-- Outros modelos de iPhones -->
+        <a href="pagina-iphone-1.html" class="dropdown-item">iPhones</a>
+        <a href="pagina-macbook.html" class="dropdown-item">Mac</a>
+        <a href="pagina-apple-watch.html" class="dropdown-item">Watch</a>
+  
+        <a href="pagina-acessorios-apple.html" class="dropdown-item">Acessórios</a>
+    </div>
+  </li>
+  
+                <!-- Segundo dropdown (Samsung) -->
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Android</a>
+        <div class="dropdown-menu">
+            <!-- Outros modelos de iPhones -->
+            <a href="pagina-samsung.html" class="dropdown-item">Samsung</a>
+            <a href="pagina-motorola.html" class="dropdown-item">Motorola</a>
+            <a href="pagina-xiaomi.html" class="dropdown-item">Xiaomi</a>
+  
+            <a href="pagina-android-1.html" class="dropdown-item">Androids</a>
+        </div>
+      </li>
+  
+            <!-- Terceiro dropdown -->
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mais produtos</a>
+              <div class="dropdown-menu">
+                <a href="pagina-notebook.html" class="dropdown-item">Notebooks</a>
+                <a href="pagina-tv.html" class="dropdown-item">TV´s</a>
+                <a href="pagina-som.html" class="dropdown-item">Áudio</a>
+                <a href="pagina-game.html" class="dropdown-item">Gaming</a>
+              </div>
+            </li>
+  
+          </ul>
+  
+          <!-- Formulário de busca centralizado -->
+          <form class="navbar-search" role="Pesquisar">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-primary" type="submit">
+              <i class="fas fa-search"></i> 
+            </button>
+          </form>
+  
+           <!-- Ícones do lado direito: Carrinho e Login -->
+           <div class="navbar-icons">
+              <a href="carrinho.html" class="nav-link" title="Carrinho">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+              <a href="loginecadastro2.php" class="nav-link" title="Login">
+                <i class="fas fa-user"></i>
+              </a>
+            </div>
+    
+  
+        </div>
+      </div>
+    </nav>
+  
+   
+  <div class="container mt-5">
+    <div class="step">
+      <div class="step-item active" id="step-cart">1. Carrinho</div>
+      <div class="step-item" id="step-identification">2. Identificação</div>
+      <div class="step-item" id="step-payment">3. Pagamento</div>
+    </div>
+  </div>
+
+  
+  <!-- Etapa do Carrinho -->
+<div class="container mt-5" id="cart-page">
+    <h3 class="mb-4 text-primary"> Seu carrinho de compras</h3>
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table align-middle bg-gray shadow-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Imagem</th> <!-- Coluna para imagem -->
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Produtos adicionados dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <div class="summary-box">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Total: R$ <span id="cart-total">0.00</span></h5>
+                    <button class="btn btn-primary" id="go-to-identification">Continuar</button>
+                </div>
+                <div class="accordion" id="purchaseSummaryAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Ver detalhes da compra
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#purchaseSummaryAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-1">Subtotal: R$ <span id="cart-subtotal">0.00</span></p>
+                                <p class="mb-1">Descontos: - R$ 0,00</p>
+                                
+                                <div class="shipping mt-4">
+                                    <label for="cep">Frete e prazo de entrega</label>
+                                    <div class="d-flex">
+                                        <input type="text" id="cep" placeholder="Informe seu CEP" class="form-control">
+                                        <button class="btn btn-primary ms-2" id="calcular-frete">Calcular</button>
+                                    </div>
+                                    <div class="shipping-result mt-2" id="resultado-frete">
+                                        <!-- Resultado do frete será exibido aqui -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Etapa de Identificação -->
+<div id="identification-page"  class="container mt-5 d-none" >
+    <h3 class="mb-4 text-center">Identificação</h3>
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="mb-3">
+                <label for="email" class="form-label"><i class="fas fa-envelope"></i> E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><i class="fas fa-user"></i> Nome Completo</label>
+                <input type="text" class="form-control" id="name" placeholder="Digite seu nome completo" required>
+            </div>
+            <button class="btn btn-primary w-100" id="go-to-payment"><i class="fas fa-arrow-right"></i> Continuar para Pagamento</button>
+        </div>
+    </div>
+</div>
+
+<!-- Etapa de Pagamento -->
+<div class="container mt-5 d-none" id="payment-page">
+    <h3 class="mb-4 text-center">Pagamento</h3>
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="mb-3">
+                <label for="card-number" class="form-label">
+                    <i class="fas fa-credit-card"></i> Número do Cartão
+                </label>
+                <input type="text" class="form-control" id="card-number" placeholder="Digite o número do seu cartão" required>
+            </div>
+            <div class="mb-3">
+                <label for="card-expiry" class="form-label">
+                    <i class="fas fa-calendar-alt"></i> Validade (MM/AA)
+                </label>
+                <input type="text" class="form-control" id="card-expiry" placeholder="MM/AA" required>
+            </div>
+            <div class="mb-3">
+                <label for="card-cvc" class="form-label">
+                    <i class="fas fa-lock"></i> CVC
+                </label>
+                <input type="text" class="form-control" id="card-cvc" placeholder="CVC" required>
+            </div>
+            <button class="btn btn-success w-100" id="finalize-payment">
+                <i class="fas fa-check-circle"></i> Finalizar Pagamento
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Agradecimento -->
+<div class="modal fade" id="thank-you-modal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="thankYouModalLabel" style="color: #348bea; margin-left: 120px;">A Kong Tech agradece!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h2 class="text-black-50">Obrigado pelo seu pagamento!</h2>
+                <p class="lead text-black-50 ">Sua transação foi concluída com sucesso.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="index.html"><button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <br><br><br><br>
+
+  <!-- Rodapé -->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Ícones de Redes Sociais -->
+            <div class="col-12 col-md-4 social-icons text-center">
+                <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+            </div>
+            
+            <!-- Texto do Rodapé -->
+            <div class="col-12 col-md-4 ">
+                <p>&copy; 2024 KongTech. Todos os direitos reservados.</p>
+            </div>
+            <br>
+ <br>
+            <div style="margin-top: 50px;" class="col-12 col-md-4 ">
+                <p>&copy; Site da desenvolvedora</p>
+                <a href="aresdev.html"><img src="../logo-marcas/logotipoares.png" style="max-width: 80px;"></a>
+            </div>
+            
+            <!-- Link para Documentação (à direita) -->
+            <div style="margin-left: 450px;" class="col-12 col-md-4 text-center text-md-right">
+                <a href="documentacao.pdf" class="documentation-link">Documentação <i class="fas fa-book"></i></a>
+            </div>
+        </div>
+  
+        <!-- Linha Divisória -->
+        <hr style="border-color: #ffffff; margin-top: 40px;">
+  
+        <!-- Área de Contatos (ajustada) -->
+        <div class="contact-info">
+            <h5>Informações de Contato</h5><br>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-map-marker-alt"></i> R. Bueno Brandão, 74 - Guarulhos (SP)   
+                 </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-phone-alt"></i> (11) 98820-2529
+                </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-envelope"></i> kongtechsuporte@gmail.com
+                </div>
+                <div class="col-12 col-md-4 institutional-links text-center">
+                  <a href="institucionalmae.html"><i class="fas fa-building"></i> Páginas Institucionais</a>
+              </div>
+            </div>
+        </div>
+       
+  </footer>
+
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('calcular-frete').addEventListener('click', function() {
+        var frete = (Math.random() * 50 + 10).toFixed(2); // Gerando valor de frete aleatório entre R$ 10,00 e R$ 60,00
+        document.getElementById('resultado-frete').innerText = 'Frete estimado: R$ ' + frete;
+    });
+
+
+
+    // Função para atualizar os totais do carrinho
+    function updateCartTotals(subtotal) {
+        document.getElementById('cart-subtotal').innerText = subtotal.toFixed(2);
+        const discount = 0.00; // Valor do desconto fixo
+        const total = subtotal - discount;
+        document.getElementById('cart-total').innerText = total.toFixed(2);
+    }
+
+    // Função para carregar os produtos do localStorage no carrinho
+    function loadCartProducts() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItems = document.getElementById('cart-items');
+
+        let subtotal = 0;
+
+        // Adiciona cada produto na tabela do carrinho
+        cart.forEach(product => {
+            const productSubtotal = product.price * product.quantity;
+            subtotal += productSubtotal;
+
+            // Adiciona a linha na tabela
+            cartItems.innerHTML += `
+                <tr>
+                    <td><img src="${getProductImage(product.name)}" alt="${product.name}" class="img-fluid" style="max-width: 100px;"></td>
+                    <td>${product.name}</td>
+                    <td>
+                        <input type="number" value="${product.quantity}" min="1" class="form-control quantity-input" data-name="${product.name}" data-price="${product.price}">
+                    </td>
+                    <td>R$ <span class="unit-price">${product.price.toFixed(2)}</span></td>
+                    <td>R$ <span class="subtotal">${productSubtotal.toFixed(2)}</span></td>
+                    <td><button class="btn btn-danger remove-product" data-name="${product.name}">Remover</button></td>
+                </tr>
+            `;
+        });
+
+        // Atualiza os valores totais
+        updateCartTotals(subtotal);
+    }
+        /* aqui fica a parte para conseguir adicionar um novo produto*/
+
+
+    // Função auxiliar para obter a imagem do produto
+    function getProductImage(productName) {
+        // Mapeie os nomes dos produtos para as URLs das imagens
+        const productImages = {
+            'Iphone 15 pro verde água': 'iphone15-removebg-preview.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            'Cadeira Gamer Fortt Trieste - Vermelha': 'cadeira-fortt-buds.png',
+            'MAX RACER - Poltrona Massageadora': 'cadeira-smi-buds4-lite.png',
+            'DualSense Controle sem fio': 'controle-ps5-bar-1000.png',
+            'Joystick Xbox One - Vermelho': 'controle-xbox-series-s.png',
+            'DualSense Controle sem fio Edge™': 'dualsense-edge-lg-snh5.png',
+            'Headset Gamer Logitech G335': 'headset-logitech.png',
+            'PlayStation®5 Slim Edição Digital': 'ps5.png',
+            'Razer Kaira Wireless Gaming Headset': 'razer-kaira-buds.png',
+            'Console Xbox Series S': 'xbox-series-s.png',
+            'Controle Sem Fio Xbox + Cabo USB': 'xbox-series-x-cinema-sb580.png',
+            'Console Xbox Series X': 'xbox-series-x.png',
+            'Noteebok Acer Aspire 5': 'acer-asíre-5.png',
+            'Notebook Acer Nitro V15': 'acer-nitro-v15.png',
+            'Notebook Asus Tuf Gaming F15': 'asus-tuf-gaming-f15.png',
+            'Dell Alienware M16': 'dell-alienware-m16.png',
+            'Notebook Dell Inspiron 15': 'dell-inspiron-15.png',
+            'Notebook Lenovo IdeaPad i1': 'lenovo-ideapad-1i.png',
+            'Notebook Lenovo Legion Slim 5': 'lenovo-legion-slim5.png',
+            'Notebook Lenovo LOQ': 'lenovo-loq.png',
+            'Notebook Lenovo Yoga Book 9': 'lenovo-yoga-book9.png',
+            'Notebook Predator Helios Neo': 'predator-helios-neo.png',
+            'Notebook Samsung Galaxy Book 2': 'samsung-galaxy-book2.png',
+            'Apple iPhone 13 Mini (128GB) — Azul': 'iphone13-mini.png',
+            'Apple iPhone 13 Pro Max (256GB) — Gold': 'iphone13-pro-max.png',
+            'Apple iPhone 13 Pro (256GB) — Azul Sierr': 'iphone13-pro.png',
+            'Apple iPhone 13 (128GB) — Estelar': 'iphone13.png',
+            'Apple iPhone 14 Plus (512GB) — Estelar': 'iphone14-plus.png',
+            'Apple iPhone 14 Pro Max (256GB) — Gol': 'iphone14-pro-max.png',
+            'Apple iPhone 14 Pro (1TB) — Roxo': 'iphone14-pro.png',
+            'Apple iPhone 14 (128 GB) — Azul': 'iphone14.png',
+            'Apple iPhone 15 Plus (128GB) — Azul': 'iphone15-plus.png',
+            'Apple iPhone 15 Pro Max (256GB) — Titânio Azul': 'iphone15-pro-max.png',
+            'Apple iPhone 15 Pro (256GB) — Titânio': 'iphone-15-pro.png',
+            'Apple iPhone 15 (128 GB) — Verde': 'iphone15-removebg-preview.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            'Samsung Galaxy Z Fold5 (1TB) - Preto': 'galaxy-z-fold5.png',
+            // Adicione mais produtos conforme necessário
+        };
+
+        
+        return productImages[productName] || 'placeholder.jpg'; // Retorna uma imagem padrão se o produto não for encontrado
+    }
+
+    // Carregar os produtos do localStorage ao carregar a página
+    window.onload = function() {
+        loadCartProducts();
+    };
+
+    // Listener para atualizar o carrinho ao mudar a quantidade
+    document.addEventListener('input', function(event) {
+        if (event.target.classList.contains('quantity-input')) {
+            const quantity = parseInt(event.target.value);
+            const unitPrice = parseFloat(event.target.getAttribute('data-price'));
+            const productName = event.target.getAttribute('data-name');
+
+            // Atualiza o subtotal do produto
+            const subtotalElement = event.target.closest('tr').querySelector('.subtotal');
+            const productSubtotal = unitPrice * quantity;
+            subtotalElement.innerText = productSubtotal.toFixed(2);
+
+            // Atualiza o total geral
+            let newSubtotal = 0;
+            document.querySelectorAll('.subtotal').forEach(subtotal => {
+                newSubtotal += parseFloat(subtotal.innerText);
+            });
+
+            updateCartTotals(newSubtotal);
+        }
+    });
+
+    // Listener para remover produtos do carrinho
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('remove-product')) {
+            const productName = event.target.getAttribute('data-name');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = cart.filter(item => item.name !== productName);
+
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            window.location.reload(); // Recarrega a página para atualizar a exibição
+        }
+    });
+
+    document.getElementById("go-to-identification").addEventListener("click", function() {
+        document.getElementById("cart-page").classList.add("d-none");
+        document.getElementById("identification-page").classList.remove("d-none");
+        document.getElementById("step-cart").classList.remove("active");
+        document.getElementById("step-cart").classList.add("completed");
+        document.getElementById("step-identification").classList.add("active");
+    });
+
+    document.getElementById("go-to-payment").addEventListener("click", function() {
+        document.getElementById("identification-page").classList.add("d-none");
+        document.getElementById("payment-page").classList.remove("d-none");
+        document.getElementById("step-identification").classList.remove("active");
+        document.getElementById("step-identification").classList.add("completed");
+        document.getElementById("step-payment").classList.add("active");
+    });
+
+    document.getElementById('finalize-payment').addEventListener('click', function() {
+        var modal = new bootstrap.Modal(document.getElementById('thank-you-modal'));
+        modal.show();
+    });
+</script>
+
+</body>
+</html>

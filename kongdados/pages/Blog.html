@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kong Tech - BLOG</title>
+    <link rel="icon" href="fivecon.png" type="image/x-icon">
+    <link  rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+    
+
+     /* Estilo do Rodapé */
+     .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+      .preco-antigo {
+       
+      font-size: 1.5rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .preco-novo {
+     
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .desconto {
+     
+      font-size: 1rem;
+      font-weight: 600;
+      color: #dc3545;
+      
+    }
+
+
+
+
+    .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .badge {
+            font-size: 0.8rem;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        
+        color: #348bea;
+    }
+
+    .bg-principal{
+        background-color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+     
+    }
+
+
+
+        .product-page {
+            margin-top: 30px;
+        }
+
+        .breadcrumb {
+            background: none;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: ">";
+            padding: 0 5px;
+            color: #6c757d;
+        }
+
+        /* Estilo da imagem com efeito de zoom */
+        .product-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease; /* Transição suave para o zoom */
+        }
+
+        .product-image:hover img {
+            transform: scale(1.2); /* Efeito de zoom */
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .price-box h2 {
+            font-size: 30px;
+            color: #348bea;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 15px;
+            transition: 0.3s ease;
+            width: 100%;
+            border: none; /* Remover a borda preta */
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        .shipping {
+            margin-top: 20px;
+        }
+
+        .shipping input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+
+        .shipping button {
+            background-color: #348bea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .shipping-result {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+
+        .related-products {
+            margin-top: 40px;
+        }
+
+        .related-product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+            padding: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .related-product:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .related-product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+
+        .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        display: none;
+    }
+
+    .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .coupon-section {
+            margin-top: 30px;
+        }
+
+        /* Estilo do preço com desconto */
+        .preco-com-desconto {
+            font-size: 24px;
+            color: #348bea;
+            font-weight: bold;}
+
+
+            .product-description {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-header {
+            font-weight: bold;
+            color: #348bea;
+        }
+
+        .toggle-description {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+
+    </style>
+   </head>
+
+   <body style="background-color: #efefef;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+          <!-- Botão para toggler no modo mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="nav-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Logo da empresa -->
+          <a href="Blog.html"><img src="../logo-marcas/logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px"></a>
+      
+          <!-- Conteúdo centralizado -->
+          <div class="d-flex flex-column align-items-center mx-auto">
+            <!-- Botão para voltar ao site principal -->
+            <a href="index.html" class="btn btn-primary btn-sm">Voltar ao site principal</a>
+            <!-- Texto complementar -->
+            <span class="text-muted small mt-1">Explore nossos melhores produtos!</span>
+          </div>
+      
+          <!-- Ícones do lado direito: Carrinho e Login -->
+          <div class="navbar-icons d-flex">
+            <a href="loginecadastro2.php" class="nav-link" title="Login">
+              <i class="fas fa-user"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      
+
+
+    <div class="jumbotron  mt-5">
+      <h1 class="display-5 animate__animated animate__heartBeat text-primary text-center ">Bem-vindo ao nosso blog!</h1>
+      <p class="lead text-center">Saiba sobre todas as novidades do mundo tecnológico conosco.</p>
+      <hr class="my-4 p-3 w-50 justify-content-center mx-auto border-2 border-primary">
+     
+    </div>
+    
+
+   
+    <div class="container mt-5">
+    <div class="card">
+
+      <div class="card-header-top mt-3">
+        <p class="lead text-primary mx-auto text-center ">Novo lançamento!</p>
+      </div>
+
+      
+      <div class="card-body m-3">
+        <h2 class="card-title text-primary m-3">Apple apresenta os chips M4 Pro e M4 Max</h2>
+        <h6 class="card-subtitle m-3 text-black-50">Novo lançamento da Apple já diponível</h6>
+        <p class="card-text m-3 text-black-50">Descubra agora o que o novo lançamento da Apple trouxe de novo e suas vantagens e desesvantagens para o usuário.</p>
+        <a class="btn btn-outline-primary m-3" href="conteudo.html">Leia mais</a>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="card">
+      
+      <div class="card-body m-3">
+        <h2 class="card-title text-primary m-3">Novo MacBook Pro da Apple traz a potência da linha de chips M4 e dá início a uma nova era com a Apple Intelligence</h2>
+        <h6 class="card-subtitle m-3 text-black-50">Novo lançamento da Apple já diponível</h6>
+        <p class="card-text m-3 text-black-50">Descubra agora o que o novo lançamento da Apple trouxe de novo e suas vantagens e desesvantagens para o usuário.</p>
+        <a class="btn btn-outline-primary m-3" href="conteudo2.html">Leia mais</a>
+      </div>
+    </div>
+  
+
+    <br><br>
+
+    <div class="card">
+      
+      <div class="card-body m-3">
+        <h2 class="card-title text-primary m-3">Apple libera o iOS 18.2 beta 3: confira o que mudou</h2>
+        <h6 class="card-subtitle m-3 text-black-50">Novo lançamento da Apple já diponível</h6>
+        <p class="card-text m-3 text-black-50">Descubra agora o que o novo lançamento da Apple trouxe de novo e suas vantagens e desesvantagens para o usuário.</p>
+        <a class="btn btn-outline-primary m-3" href="conteudo3.html">Leia mais</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    
+  <div class="container mt-5">
+    <!--CArtão 1-->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card ">
+            <img src="../produtos/iphone/iphone15.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title text-primary m-2">Conheça o Iphone 13!</h3>
+              <h6 class="card-subtitle text-black-50 m-2">vale apena comprar?</h6>
+              <p class="card-text m-2  mt-3 text-black-50 small"></p>
+              <a class="btn btn-outline-primary m-2" href="conteudo4.html">Leia mais</a>
+            </div>
+          </div>
+        </div>
+        
+          <!--CArtão 2-->
+        <div class="col">
+          <div class="card">
+            <img src="../assets/images/aleatorias/vermelhão.png" style="width: 240px; height: 345px; margin-top: 70px; margin-left: 80px;" class="card-img-top" alt="...">
+            <div class="card-body">
+             <h3 class="card-title text-primary m-2" >Comparativo Entre Iphones</h3>
+              <h6 class="card-subtitle text-black-50 m-2"> Vale a Pena Atualizar?</h6>
+              <p class="card-text m-2  mt-3 text-black-50 small"></p>
+              <a class="btn btn-outline-primary m-2" href="conteudo5.html">Leia mais</a>
+            </div>
+          </div>
+        </div>
+
+
+          <!--CArtão 3-->
+        <div class="col">
+          <div class="card">
+            <img  src="../produtos/iphone/iphone24.png" style="width: 260px; height: 345px; margin-top: 70px; margin-left: 80px;" class="card-img-top ">
+            <div class="card-body">
+              <h3 class="card-title text-primary m-2">Iphones de 2024</h3>
+              <h6 class="card-subtitle text-black-50 m-2"></h6>
+              <p class="card-text m-2  mt-3 text-black-50 small">Será a melhor opção?  </p>
+              <a class="btn btn-outline-primary m-2" href="conteudo6.html">Leia mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<br><br>
+
+<nav aria-label="Page navigation example" style="margin-left: 60px;">
+  <ul class="pagination">
+    <li class="page-item bg-primary"><a class="page-link bg-primary text-white" href="Blog.html">1</a></li>
+    <li class="page-item"><a class="page-link" href="pagina2.html">2</a></li>
+  
+  </ul>
+</nav>
+
+
+
+<br><br>
+  
+
+  
+     <!-- Rodapé -->
+
+    <!-- Rodapé -->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Ícones de Redes Sociais -->
+            <div class="col-12 col-md-4 social-icons text-center">
+                <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+            </div>
+            
+            <!-- Texto do Rodapé -->
+            <div class="col-12 col-md-4 ">
+                <p>&copy; 2024 KongTech. Todos os direitos reservados.</p>
+            </div>
+            
+            <!-- Link para Documentação (à direita) -->
+            <div class="col-12 col-md-4 text-center text-md-right">
+                <a href="documentacao.pdf" class="documentation-link">Documentação <i class="fas fa-book"></i></a>
+            </div>
+        </div>
+  
+        <!-- Linha Divisória -->
+        <hr style="border-color: #ffffff; margin-top: 40px;">
+  
+        <!-- Área de Contatos (ajustada) -->
+        <div class="contact-info">
+            <h5>Informações de Contato</h5><br>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-map-marker-alt"></i> R. Bueno Brandão, 74 - Guarulhos (SP)   
+                 </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-phone-alt"></i> (11) 98820-2529
+                </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-envelope"></i> kongtechsuporte@gmail.com
+                </div>
+                <div class="col-12 col-md-4 institutional-links text-center">
+                  <a href="institucionalmae.html"><i class="fas fa-building"></i> Páginas Institucionais</a>
+              </div>
+            </div>
+        </div>
+       
+  </footer>
+  
+  
+
+    <script src="../js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+</html>

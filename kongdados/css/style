@@ -1,0 +1,116 @@
+ /* Estilo do Rodapé */
+        .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }

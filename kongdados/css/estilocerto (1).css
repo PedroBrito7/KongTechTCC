@@ -1,0 +1,234 @@
+.topo{  
+        
+        height: 309px;
+        width: 1520px;
+       margin-top: -60px;
+        margin-left: -10px;
+       background-color:black;
+         
+}
+
+ .logo{
+                
+                  height: 210px;
+                   width:  468px;
+                   margin-left: 480px;
+                   margin-top: 60px;
+}
+ .compra{
+
+                   border: solid 3px red;
+                    height: 50px;
+                   width:  80px;
+                    margin-left: 1250px;
+                   margin-top: -60px;
+}
+
+ .login{
+
+                   border: solid 3px red;
+                    height: 50px;
+                   width:  80px;
+                    margin-left: 1380px;
+                   margin-top: -55px;
+}
+
+                         
+.navi{             
+         font-size: 20px;
+        font-family: Arial; 
+        height: 50px; 
+      width: 1520px;
+      margin-top: -20px;
+    background-color:#00008B;
+     margin-left:-10px;   
+    positon: absolute;
+        
+}
+
+.banner{
+      
+        height: 3750px;
+        width: 750px;
+      margin-top: -0px;  
+      margin-left: 350px; 
+     background-color:rgb(246, 246, 246);
+}
+
+.logo img{
+     margin-top: 30px;
+}
+
+
+ 
+.navi li{ 
+           display: inline-block;
+           margin-left: 100px;
+     margin-top: 12px;
+       
+
+}
+
+.navi li a{ 
+                 text-decoration: none; 
+                
+                 color: black;
+}
+
+.navi li a:hover{
+	background-color: black;
+                  border-radius: 5px;
+                  border: solid 7px black;
+           
+             '
+}
+
+
+
+
+
+.navi ul {
+                  margin-left: 265px;
+        
+
+}
+
+.navi ul a {
+                  color: white;
+        
+
+}
+ 
+.banner{
+    font-size: 20px;
+    
+  
+}
+
+.conteudo{
+padding-top: -90px;
+padding-left: 55px;
+font-family: Irineu Diversa Ariane;
+font-size: 35px;
+margin-top: -10px;
+
+}
+
+.imagem{
+    padding-left: 30px;
+   padding-top: 20px;
+
+}
+.imagem p{
+     margin-top: -5px;
+    padding-left: 0px;
+    color: black;
+   font-size: 14px;
+}
+
+.texto{
+   
+   padding-left: 50px;
+  
+}
+.texto2{
+       height: 250px;
+        width: 650px;
+      background-color:rgb(246, 246, 246);
+       text-align: justify;
+       font-size: 18px;
+    font-family: Arial;
+   color: black;
+    
+}
+
+.noticia1{
+  margin-top: 60px;
+  margin-left: 30px;
+ 
+  font-size: 35px;
+
+}
+.conteudo2{
+     margin-top: 70px;
+    margin-left: 43px;
+    font-size: 35px;
+}
+
+.imagem2 p{
+     margin-top: -5px;
+    padding-left: 3px;
+    color: black;
+   font-size: 14px;
+}
+.imagem2{
+ margin-left: 30px;
+
+}
+.conteudo3{
+     margin-top: 100px;
+    margin-left: -6px;
+    font-size: 35px;
+}
+.imagem3{
+       margin-left: -20px;
+}
+.imagem3 p{
+     margin-top: -5px;
+    padding-left: 3px;
+    color: black;
+   font-size: 14px;
+}
+.texto3{
+   
+   padding-left: 0px;
+  
+}
+.conteudo4{
+     margin-top: 100px;
+    margin-left: -6px;
+    font-size: 35px;
+}
+.container{
+    background-color: red;
+    margin-top: 190px;
+   margin-left: -420px;
+   height: 250px;
+        width: 1531px;
+       background-color:#00008B;
+}
+.alternativo{
+ height: 28px;
+        width: 300px;
+    background-color: black; 
+  margin-left: 780px;
+  margin-top: 10px;
+  
+   
+}
+.conteudo5 a{ 
+font-family: Irineu Diversa Ariane;
+font-size: 17px;
+text-decoration:none;
+margin-top: 30px;
+}
+h1{
+  margin-left: 500px;
+ font-family: Irineu Diversa Ariane;
+}
+ 
+form{ 
+   margin-left: 500px;
+}
+
+h2{
+  margin-left: 400px;
+  margin-top: 150px;
+ font-family: Irineu Diversa Ariane;
+}
+.img img{
+  margin-left: 550px;
+   height: 300px;
+        width: 300px;
+}
+    

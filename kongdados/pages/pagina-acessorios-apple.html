@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kong Tech</title>
+     <link rel="icon" href="fivecon.png" type="image/x-icon">
+   <link rel="icon" href="fivecon.png" type="image/x-icon">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link href="../css/bootstrap-icons.css" rel="stylesheet">
+    <link  rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+ /* Estilo do Rodapé */
+ .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+      footer {
+        background-color: #f8f9fa;
+        padding: 2rem 0;
+      }
+      .footer-links a {
+       
+        text-decoration: none;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .preco-antigo {
+       
+      font-size: 1.5rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .preco-novo {
+     
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .desconto {
+     
+      font-size: 1rem;
+      font-weight: 600;
+      color: #dc3545;
+      
+    }
+
+    .card-title {
+            font-size: 1.25rem; /* Tamanho do título do cartão */
+            white-space: nowrap; /* Mantém o título em uma única linha */
+            overflow: hidden; /* Esconde o texto que exceder o limite */
+            text-overflow: ellipsis; /* Adiciona reticências ao final do texto excedente */
+        }
+
+        .card-text {
+            color: #333; /* Cor do texto */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limita o texto a 3 linhas em navegadores WebKit */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+
+    .card {
+            transition: transform 0.2s;
+            overflow: hidden; /* Garante que nada excedente saia do card */
+        }
+
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .badge {
+            font-size: 0.8rem;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        background-color: #348bea;
+        color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+      }
+
+      .navbar {
+            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+        }
+
+
+    </style>
+   </head>
+
+   <body style="background-color: #efefef;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <a href="index.html"><img src="../logo-marcas/logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px"></a>
+    
+          <div class="collapse navbar-collapse" id="nav-toggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+      <!-- Primeiro dropdown (Iphones) -->
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Apple</a>
+      <div class="dropdown-menu">
+          <!-- Outros modelos de iPhones -->
+          <a href="pagina-iphone-1.html" class="dropdown-item">iPhones</a>
+          <a href="pagina-macbook.html" class="dropdown-item">Mac</a>
+          <a href="pagina-apple-watch.html" class="dropdown-item">Watch</a>
+    
+          <a href="pagina-acessorios-apple.html" class="dropdown-item">Acessórios</a>
+      </div>
+    </li>
+    
+                  <!-- Segundo dropdown (Samsung) -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Android</a>
+          <div class="dropdown-menu">
+              <!-- Outros modelos de iPhones -->
+              <a href="pagina-samsung.html" class="dropdown-item">Samsung</a>
+              <a href="pagina-motorola.html" class="dropdown-item">Motorola</a>
+              <a href="pagina-xiaomi.html" class="dropdown-item">Xiaomi</a>
+    
+              <a href="pagina-android-1.html" class="dropdown-item">Androids</a>
+          </div>
+        </li>
+    
+              <!-- Terceiro dropdown -->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mais produtos</a>
+                <div class="dropdown-menu">
+                  <a href="pagina-notebook.html" class="dropdown-item">Notebooks</a>
+                  <a href="pagina-tv.html" class="dropdown-item">TV´s</a>
+                  <a href="pagina-som.html" class="dropdown-item">Áudio</a>
+                  <a href="pagina-game.html" class="dropdown-item">Gaming</a>
+                </div>
+              </li>
+    
+            </ul>
+    
+            <!-- Formulário de busca centralizado -->
+            <form class="navbar-search" role="Pesquisar">
+              <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+              <button class="btn btn-outline-primary" type="submit">
+                <i class="fas fa-search"></i> 
+              </button>
+            </form>
+    
+             <!-- Ícones do lado direito: Carrinho e Login -->
+             <div class="navbar-icons">
+                <a href="#" class="nav-link" title="Carrinho">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="loginecadastro2.php" class="nav-link" title="Login">
+                  <i class="fas fa-user"></i>
+                </a>
+              </div>
+      
+    
+          </div>
+        </div>
+      </nav>
+    
+      <div class="container-fluid">
+        <div id="carouselExampleRide" class="carousel slide margin-carrossel" data-bs-ride="carousel" data-bs-interval="1000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../assets/images/aleatorias/1ace.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Promoção de Verão">
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/aleatorias/2ace.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Frete Grátis">
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/aleatorias/3ace.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Parcelamento Especial">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+
+
+
+   
+
+    <div id="page-content">
+<div class="container mt-5">
+
+   
+    <div class="row">
+
+
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="individual-Adaptador-de-energia-USB-C-de-20W.html"><img src="../assets/images/ap/adaptador-energia-c.png" class="card-img-top img-fluid" alt="Iphone 15"></a>
+                <div class="card-body">
+                    <h5 class="card-title m-2">Adaptador de energia USB-C de 20W</h5>
+                    <span class="badge bg-success m-2">ABAIXOU!</span>
+                    <p class="card-text small p-2">O adaptador de energia USB-C de 20W da Apple é compacto e eficiente, ideal para carregar rapidamente iPhones e iPads com segurança.</p>
+                    <p>
+                        <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 219,99</strong></span>
+                        <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 299,99</span>
+                    </p>
+                    <p class="text-success m-2">Economize <strong>R$ 79,99</strong>!</p>
+                    <div class="btn-container">
+                        <a href="individual-Adaptador-de-energia-USB-C-de-20W.html" class="btn btn-primary m-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--Card produto 2-->
+
+  <div class="col-md-4 mb-4">
+    <div class="card">
+        <a  href="individual-Adaptador-de-energia-USB-C-de-30W.html"><img src="../assets/images/ap/adaptador-usbc-30w-pro-m3.png" class="card-img-top" alt="Produto 1"></a>
+        <div class="card-body">
+            <h5 class="card-title m-2">Adaptador de energia USB-C de 30W</h5>
+            <span class="badge bg-success m-2">ABAIXOU!</span>
+            <p class="card-text small p-2">O adaptador de energia USB-C de 30W da Apple é compacto e eficiente, ideal para carregar rapidamente MacBooks e iPads.</p>
+            <p>
+                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 319,99</strong></span>
+                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 399,99</span>
+            </p>
+            <p class="text-success m-2">Economize <strong>R$ 79,99</strong>!</p>
+            <div class="btn-container">
+                <a href="individual-Adaptador-de-energia-USB-C-de-30W.html" class="btn btn-primary m-2">Comprar</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!--Card produto 3-->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+        <a href="individual-Adaptador-de-USB-C-para-Lightning.html"><img src="../assets/images/ap/adaptador-usbc.png" class="card-img-top" alt="Produto 1"></a>
+        <div class="card-body">
+            <h5 class="card-title m-2">Adaptador de USB-C para Lightning</h5>
+            <span class="badge bg-success m-2">ABAIXOU!</span>
+            <p class="card-text small p-2">O adaptador USB-C para Lightning da Apple conecta dispositivos Lightning a cabos USB-C para carregamento e transferência de dados, sendo compacto e prático.</p>
+            <p>
+                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 349,99 </strong></span>
+                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 499,99</span>
+            </p>
+            <p class="text-success m-2">Economize <strong>R$ 49,99</strong>!</p>
+            <div class="btn-container">
+                <a href="individual-Adaptador-de-USB-C-para-Lightning.html" class="btn btn-primary m-2">Comprar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Card produto 15 plus-->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <a href="individual-airpods-max.html"><img src="../assets/images/aleatorias/airpods-max-watch-series-9.png" class="card-img-top" alt="Produto 1"></a>
+        <div class="card-body">
+            <h5 class="card-title m-2">Apple AirPods Max - Meia-Noite </h5>
+            <span class="badge bg-success m-2">ABAIXOU!</span>
+            <p class="card-text small p-2">Os AirPods Max Meia-Noite são fones over-ear com cancelamento de ruído e áudio espacial. Oferecem som de alta qualidade e conforto.</p>
+            <p>
+                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$  1.999,99</strong></span>
+                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 2.499,99</span>
+            </p>
+            <p class="text-success m-2">Economize <strong>R$ 499,99</strong>!</p>
+            <div class="btn-container">
+                <a href="individual-airpods-max.html" class="btn btn-primary m-2">Comprar</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<!--Card produto 4-->
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-Apple-Pencil-Pro.html"><img src="../assets/images/ap/apple-pencil-pro.png" class="card-img-top" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Apple Pencil Pro</h5>
+          <span class="badge bg-success m-2">ABAIXOU!</span>
+          <p class="card-text small p-2">A Apple Pencil Pro é uma caneta stylus para iPads, com precisão e sensibilidade à pressão. Ideal para desenhar, anotar e editar.</p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 1.499,99</strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 2.599,99</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 1.099,99</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-Apple-Pencil-Pro.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!--Card produto 5-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-Cabo-para-recarga-de-240W (2m).html"><img src="../assets/images/aleatorias/cabo-recarga.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2"> Cabo para recarga de 240W (2m)</h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">O cabo USB-C de 240W (2m) oferece carregamento rápido para dispositivos compatíveis, com comprimento que proporciona flexibilidade.</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 349,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 399,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 49,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-Cabo-para-recarga-de-240W (2m).html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--Card produto 6-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-Capa-de-silicone-com-MagSafe.html"><img src="../assets/images/ap/capa-silicone-magsafe-watch-seriess-10.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2">Capa de silicone com MagSafe - Azul</h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">A capa de silicone com MagSafe para iPhone 16 oferece proteção e ajuste perfeito, compatível com acessórios MagSafe.</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 569,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 699,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 129,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-Capa-de-silicone-com-MagSafe.html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--Card produto 7-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-Capa-trasparente-com-MagSafe.html"><img src="../assets/images/ap/capa-trasp-magsafe.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2">Capa trasparente com MagSafe </h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">A capa transparente com MagSafe para iPhone 16 Pro oferece proteção e compatibilidade com acessórios MagSafe.</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 569,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 699,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 129,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-Capa-trasparente-com-MagSafe.html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--Card produto 8-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-Carregador-MagSafe.html"><img src="../assets/images/aleatorias/carregador-magsafe-1m-watch-series-9.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2">Carregador MagSafe (1m)</h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">O carregador MagSafe (1M) é magnético e oferece carregamento rápido para dispositivos compatíveis, com design compacto para fácil portabilidade.</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 479,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 579,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 99,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-Carregador-MagSafe.html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--Card produto 9-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-Carteira-de-tecido-FineWoven-com-MagSafe.html"><img src="../assets/images/ap/carteira-apple.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2">Carteira de tecido FineWoven </h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">A carteira de tecido FineWoven com MagSafe para iPhone amora-preta é elegante e se conecta magneticamente. Garatindo conectividae e segurança!</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 719,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 999,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 279,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-Carteira-de-tecido-FineWoven-com-MagSafe.html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<!--Card produto 11-->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <a href="individual-Magic-Keyboard-Preto.html"><img src="../assets/images/aleatorias/magic-keyborard-watch-series-7.png" class="card-img-top" alt="Produto 1"></a>
+        <div class="card-body">
+            <h5 class="card-title m-2">Magic Keyboard - Preto  </h5>
+            <span class="badge bg-info m-2">LIMITADO</span>
+            <p class="card-text small p-2">O Apple Magic Keyboard é um teclado sem fio com design elegante e perfil baixo. Oferece conexão Bluetooth e teclas de resposta rápida, ideal para Mac e iPad.</p>
+            <p>
+                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong> 1.999,99</strong></span>
+                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 2.699,99</span>
+            </p>
+            <p class="text-success m-2">Economize <strong>R$ 699,99</strong>!</p>
+            <div class="btn-container">
+                <a href="individual-Magic-Keyboard-Preto.html" class="btn btn-primary m-2">Comprar</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+        
+
+
+
+      <!--Card produto 12-->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <A href="individual-Apple-Magic-Mouse.html"><img src="../assets/images/aleatorias/magic-mouse.png" class="card-img-top" alt="Produto 1"></A>
+        <div class="card-body">
+            <h5 class="card-title m-2">Apple Magic Mouse </h5>
+            <span class="badge bg-success m-2">ABAIXOU</span>
+            <p class="card-text small p-2">O Apple Magic Mouse é um mouse sem fio com design elegante e baixo perfil. Possui superfície sensível ao toque para gestos e conexão Bluetooth para navegação precisa.</p>
+            <p>
+                <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 1.199,99 </strong></span>
+                <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 1.999,99</span>
+            </p>
+            <p class="text-success m-2">Economize <strong>R$ 799,99</strong>!</p>
+            <div class="btn-container">
+                <a href="individual-Apple-Magic-Mouse.html" class="btn btn-primary m-2">Comprar</a>
+            </div>
+        </div>
+    </div>
+  </div>
+      
+      
+     
+      </div>
+      
+  
+</div>
+</div>
+
+<!-- Rodapé -->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Ícones de Redes Sociais -->
+            <div class="col-12 col-md-4 social-icons text-center">
+                <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+            </div>
+            
+            <!-- Texto do Rodapé -->
+            <div class="col-12 col-md-4 ">
+                <p>&copy; 2024 KongTech. Todos os direitos reservados.</p>
+            </div>
+            <br>
+ <br>
+            <div style="margin-top: 50px;" class="col-12 col-md-4 ">
+                <p>&copy; Site da desenvolvedora</p>
+                <a href="aresdev.html"><img src="../logo-marcas/logotipoares.png" style="max-width: 80px;"></a>
+            </div>
+            
+            <!-- Link para Documentação (à direita) -->
+            <div style="margin-left: 450px;" class="col-12 col-md-4 text-center text-md-right">
+                <a href="documentacao.pdf" class="documentation-link">Documentação <i class="fas fa-book"></i></a>
+            </div>
+        </div>
+  
+        <!-- Linha Divisória -->
+        <hr style="border-color: #ffffff; margin-top: 40px;">
+  
+        <!-- Área de Contatos (ajustada) -->
+        <div class="contact-info">
+            <h5>Informações de Contato</h5><br>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-map-marker-alt"></i> R. Bueno Brandão, 74 - Guarulhos (SP)   
+                 </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-phone-alt"></i> (11) 98820-2529
+                </div>
+                <div class="col-12 col-md-4 contact-item">
+                    <i class="fas fa-envelope"></i> kongtechsuporte@gmail.com
+                </div>
+                <div class="col-12 col-md-4 institutional-links text-center">
+                  <a href="institucionalmae.html"><i class="fas fa-building"></i> Páginas Institucionais</a>
+              </div>
+            </div>
+        </div>
+       
+  </footer>
+
+
+
+
+  
+
+
+
+<script src="../js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+   
+
+    
+    
+    
+
+
+</script>
+  </body>
+
+</html>

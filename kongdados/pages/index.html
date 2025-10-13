@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KongTech - Sua loja de eletrônicos!</title>
+  <link rel="icon" href="fivecon.png" type="image/x-icon">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link href="../css/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
+
+  <style>
+
+
+.imagem-marca {
+  width: 150px;  /* Define a largura padrão da imagem */
+  height: auto;  /* Mantém a proporção da imagem */
+  object-fit: contain;  /* Garante que a imagem se ajuste ao tamanho sem cortar partes */
+}
+
+    .dropdown-item {
+      font-size: 18px; /* Aumenta o tamanho dos itens do dropdown */
+    }
+
+    /* Estilo da barra de pesquisa para ficar em linha reta e centralizada */
+    .navbar-search {
+      flex-grow: 1; /* Faz a barra de pesquisa crescer e ocupar espaço */
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .navbar-search input {
+      width: 70%; /* Define a largura da barra de pesquisa */
+    }
+
+    .cor-principal{
+        background-color: #348bea;
+        color: #348bea;
+    }
+
+    .cor-principal-2{
+        background-color: #efefef;
+        color: #efefef;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-icons a {
+      margin-left: 20px; /* Espaçamento entre os ícones */
+      color: #348bea; /* Cor dos ícones */
+      font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+      padding: 10px;
+    }
+    .navbar-icons a:hover {
+      color: #efefef; /* Muda a cor dos ícones ao passar o mouse */
+    }
+    .navbar-icons i {
+      transition: color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+     
+    }
+
+    /* Estilos personalizados para o vídeo ocupar toda a tela */
+    .fullscreen-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Cobre a área do vídeo */
+    }
+    .carousel-item {
+      position: relative; /* Para posicionar o vídeo absolutamente */
+      height: 100vh; /* Altura do slide em 100% da altura da viewport */
+    }
+
+    .product-area {
+      background-color: #348bea; /* Azul */
+      border-radius: 20px;
+      padding: 50px 0; /* Espaçamento superior e inferior */
+      width: 98%; /* Ocupa 100% da largura */
+      display: flex; /* Para centralizar o conteúdo interno */
+      justify-content: center; /* Centraliza horizontalmente */
+      margin: 0;
+    }
+
+    .product-container {
+      max-width: 1200px; /* Largura máxima da área do produto */
+      width: 90%; /* Largura para preencher 90% do container */
+      margin: 0 auto;
+      padding: 0 5px; /* Padding lateral */
+      
+    }
+    
+    /* Estilo para os quadrados dos produtos */
+    .product-square {
+      width: 100%; /* Largura total da coluna */
+      height: 300px; /* Altura maior para os quadrados */
+      overflow: hidden; /* Oculta parte da imagem que excede o tamanho do quadrado */
+      position: relative; /* Para posicionar elementos absolutos */
+      border-radius: 10px; /* Cantos arredondados */
+      transition: transform 0.3s; /* Transição suave para o efeito de hover */
+    }
+    
+    
+    .product-square:hover {
+      transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+      background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    }
+    
+    .product-square img {
+      width: 100%; /* Imagem ocupa 100% da largura */
+      height: 100%; /* Imagem ocupa 100% da altura */
+      object-fit: cover; /* Cobre o quadrado sem distorção */
+    }
+    
+    /* Estilo para o link */
+    .product-link {
+      position: absolute; /* Para sobrepor ao quadrado */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-decoration: none; /* Remove o sublinhado */
+      color: transparent; /* Oculta o texto inicialmente */
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 21px;
+      font-style: initial;
+      display: flex; /* Para centralizar o texto */
+      justify-content: center;
+      align-items: center;
+      transition: color 0.3s; /* Transição suave para a cor do texto */
+    }
+    
+    .product-square:hover .product-link {
+      color: white; /* Torna o texto visível ao passar o mouse */
+    }
+
+
+    .product-item {
+      margin-bottom: 30px; /* Espaçamento entre os produtos */
+    }
+     
+      
+    .news-area {
+            background-color: #348bea; /* Azul */
+            padding: 50px 0; /* Espaçamento superior e inferior */
+            margin: 20px 0; /* Margem superior e inferior para afastar de outros elementos */
+        }
+
+        .news-container {
+            max-width: 1200px; /* Largura máxima da área */
+            margin: 0 auto; /* Centraliza a área */
+            padding: 0 15px; /* Padding lateral */
+        }
+
+        .news-card {
+            transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves para o efeito de hover */
+            border-radius: 15px; /* Borda arredondada */
+            overflow: hidden; /* Esconde partes da imagem que saem do cartão */
+            margin-bottom: 30px; /* Espaçamento entre os cartões */
+        }
+
+        .news-card:hover {
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+        }
+
+        .news-card img {
+            border-bottom: 4px solid #0056b3; /* Borda na parte inferior da imagem */
+        }
+
+        h2 {
+            color: white; /* Cor do título */
+            margin-bottom: 40px; /* Espaçamento inferior do título */
+        }
+
+        .card-title {
+            font-size: 1.25rem; /* Tamanho do título do cartão */
+            white-space: nowrap; /* Mantém o título em uma única linha */
+            overflow: hidden; /* Esconde o texto que exceder o limite */
+            text-overflow: ellipsis; /* Adiciona reticências ao final do texto excedente */
+        }
+
+        .card-text {
+            color: #333; /* Cor do texto */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limita o texto a 3 linhas em navegadores WebKit */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .preco-antigo {
+       
+       font-size: 1.5rem;
+       color: #999;
+       text-decoration: line-through;
+     }
+ 
+     .preco-novo {
+      
+       font-size: 2.5rem;
+       font-weight: bold;
+       color: #28a745;
+     }
+ 
+     .desconto {
+      
+       font-size: 1rem;
+       font-weight: 600;
+       color: #dc3545;
+       
+     }
+ 
+ 
+ 
+ 
+     .card {
+             transition: transform 0.2s;
+             
+            overflow: hidden; /* Garante que nada excedente saia do card */
+         }
+         .card:hover {
+             transform: scale(1.05);
+         }
+         .badge {
+             font-size: 0.8rem;
+         }
+         .btn-container {
+             display: flex;
+             justify-content: flex-end;
+         }
+
+
+         
+         .slot-machine-message {
+  background-color: #f8f9fa; /* Cor de fundo suave para destacar a seção */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slot-machine-message h2 {
+  color: #007bff; /* Cor do título chamativa */
+  font-weight: bold;
+  animation: pulseText 2s infinite; /* Animação para chamar atenção */
+}
+
+.slot-machine-message p {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.slot-machine-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+}
+
+.slot {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 250px; /* Largura suficiente para caber os nomes */
+  height: 120px;
+  text-align: center;
+  background-color: #f1f1f1;
+  transition: all 0.3s ease-in-out;
+}
+
+.spin-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulseButton 1.5s infinite; /* Animação para chamar atenção */
+}
+
+.spin-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
+}
+
+.spin-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação para o título */
+@keyframes pulseText {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Animação para o botão */
+@keyframes pulseButton {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+        .fa-gift {
+            font-size: 2.5rem;
+            color: #348bea;
+        }
+
+             /* Estilo para mostrar o sub-dropdown quando o item pai é ativado */
+             .dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  display: none; /* Esconder por padrão */
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-top: 0;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block; /* Exibir quando o mouse estiver sobre o item */
+}
+
+
+
+    .brand-name {
+        display: inline-block; /* Permite que o texto ocupe o espaço corretamente */
+        transition: opacity 0.5s ease; /* Transição para a opacidade */
+        color: #348bea;
+    }
+
+    .banner-container {
+        background-color: #f8f9fa; /* Fundo mais suave */
+        border-radius: 10px; /* Bordas arredondadas */
+        padding: 20px; /* Espaçamento interno */
+    }
+
+    .border {
+        border: 1px solid #348bea; /* Borda azul para os cartões */
+    }
+
+    .bg-light:hover {
+        box-shadow: 0 4px 20px rgba(52, 139, 234, 0.5); /* Sombra mais forte ao passar o mouse */
+        transform: translateY(-5px); /* Levanta o cartão */
+        transition: all 0.3s ease; /* Suaviza a transição */
+    }
+
+    .margin-carrossel{
+      margin-top: 70px;
+     
+    }
+
+    .img-carousel {
+  
+  object-fit: cover;
+  border-radius: 30px; /* Bordas mais suaves e modernas */
+  box-shadow: 0 8px 30px rgba(8, 6, 6, 0.4); /* Sombra mais destacada */
+  transition: transform 0.5s ease; /* Transição suave ao trocar slides */
+}
+
+.img-carousel:hover {
+  transform: scale(1.02); /* Efeito de leve zoom ao passar o mouse */
+}
+
+/* Estilização das legendas */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6); /* Fundo transparente mais escuro */
+  padding: 20px;
+  border-radius: 12px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra no texto para destaque */
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/* Controles customizados */
+.custom-control-prev, .custom-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.custom-control-prev:hover, .custom-control-next:hover {
+  opacity: 1;
+}
+
+.custom-prev-icon, .custom-next-icon {
+  background-color: #000; /* Cor dos botões */
+  padding: 20px;
+  border-radius: 50%; /* Botões redondos */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra nos controles */
+}
+
+.custom-prev-icon:hover, .custom-next-icon:hover {
+  background-color: #333; /* Mudança de cor ao passar o mouse */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Ícones brancos */
+}
+
+/* Adiciona uma transição suave ao passar para o próximo slide */
+.carousel-inner .carousel-item {
+  transition: transform 1s ease, opacity 0.5s ease;
+}
+
+  .navbar {
+            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+        }
+
+      
+
+
+        .video-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .video-fullscreen {
+            width: 100%;
+            height: auto;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Transparência preta */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .video-overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .video-overlay p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .btn-call-to-action {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .btn-call-to-action:hover {
+            background-color: #0056b3;
+        }
+
+        .icon-animation {
+            font-size: 2rem;
+            margin-top: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Efeito de desfoque ao passar o mouse */
+        .video-container:hover .video-fullscreen {
+            filter: blur(4px);
+            transition: filter 0.3s ease;
+        }
+
+        .video-container:hover .video-overlay {
+            background: rgba(0, 0, 0, 0.6); /* Mais escuro quando o vídeo é focado */
+        }
+
+        /* Estilo da seção abaixo do vídeo */
+        .section-below {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f3f4f6, #ffffff);
+            text-align: center;
+        }
+
+        .section-below h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #007bff;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .section-below p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        /* Cards com ícones */
+        .info-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .scroll-animation {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+
+        .marquee-container {
+            background-color: #efefef; /* Cor de fundo */
+            color: #348bea; /* Cor do texto */
+            overflow: hidden;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        .marquee-text {
+            
+            display: inline-block;
+            padding-left: 100%; /* Começa fora da tela */
+            animation: scroll 10s linear infinite;
+            font-size: 20px;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+         /* Estilo do Rodapé */
+         .footer {
+            background-color: #348bea; /* Cor única azul */
+            color: #efefef; /* Cor do texto claro */
+            padding: 40px 0; /* Espaçamento interno */
+        }
+
+        /* Ícones de Redes Sociais */
+        .footer .social-icons a {
+            color: #efefef;
+            margin: 0 10px; /* Ajustado para reduzir o espaçamento */
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ffffff; /* Cor de destaque ao passar o mouse */
+            transform: scale(1.2); /* Aumenta o ícone */
+        }
+
+        /* Link para Documentação */
+        .footer .documentation-link {
+            color: #efefef;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #efefef;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 10px; /* Ajustado o espaçamento */
+        }
+
+        .footer .documentation-link:hover {
+            background-color: #efefef;
+            color: #348bea;
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Texto do Rodapé */
+        .footer .footer-text {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid #ffffff; /* Linha divisória fina */
+            padding-top: 20px;
+        }
+
+        /* Estilo da área de páginas institucionais */
+        .institutional-links {
+            padding: 30px 0; /* Menos espaçamento para ficar mais compacto */
+        }
+
+        .institutional-links h5 {
+            font-size: 22px;
+            color: #efefef;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .institutional-links a {
+            color: #efefef;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s ease-in-out;
+            display: block;
+            margin: 10px 0;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .institutional-links a:hover {
+            color: #ffffff;
+            background-color: #348bea;
+            transform: translateX(5px); /* Efeito de deslocamento */
+        }
+
+        /* Estilo da área de Contatos */
+        .contact-info {
+            background-color: #348bea;
+            color: #efefef;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info .contact-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer .social-icons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .documentation-link {
+                text-align: center;
+                display: block;
+                margin-top: 0;
+            }
+
+            .institutional-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                padding: 20px 0;
+            }
+        }
+        
+  </style>
+</head>
+<body style="background-color: #efefef;">
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a href="index.html"><img src="../logo-marcas/logo-kong-tech.png" alt="Logo" class="img-fluid m-2" style="max-height: 35px"></a>
+
+      <div class="collapse navbar-collapse" id="nav-toggler">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+  <!-- Primeiro dropdown (Iphones) -->
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Apple</a>
+  <div class="dropdown-menu">
+      <!-- Outros modelos de iPhones -->
+      <a href="pagina-iphone-1.html" class="dropdown-item">iPhones</a>
+      <a href="pagina-macbook.html" class="dropdown-item">Mac</a>
+      <a href="pagina-apple-watch.html" class="dropdown-item">Watch</a>
+
+      <a href="pagina-acessorios-apple.html" class="dropdown-item">Acessórios</a>
+  </div>
+</li>
+
+              <!-- Segundo dropdown (Samsung) -->
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Android</a>
+      <div class="dropdown-menu">
+          <!-- Outros modelos de iPhones -->
+          <a href="pagina-samsung.html" class="dropdown-item">Samsung</a>
+          <a href="pagina-motorola.html" class="dropdown-item">Motorola</a>
+          <a href="pagina-xiaomi.html" class="dropdown-item">Xiaomi</a>
+
+          <a href="pagina-android-1.html" class="dropdown-item">Androids</a>
+      </div>
+    </li>
+
+          <!-- Terceiro dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mais produtos</a>
+            <div class="dropdown-menu">
+              <a href="pagina-notebook.html" class="dropdown-item">Notebooks</a>
+              <a href="pagina-tv.html" class="dropdown-item">TV´s</a>
+              <a href="pagina-som.html" class="dropdown-item">Áudio</a>
+              <a href="pagina-game.html" class="dropdown-item">Gaming</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Formulário de busca centralizado -->
+        <form class="navbar-search" role="Pesquisar">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-primary" type="submit">
+            <i class="fas fa-search"></i> 
+          </button>
+        </form>
+
+         <!-- Ícones do lado direito: Carrinho e Login -->
+         <div class="navbar-icons">
+            <a href="carrinho.html" class="nav-link" title="Carrinho">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+            <a href="../backend/php/loginecadastro2.php" class="nav-link" title="Login">
+              <i class="fas fa-user"></i>
+            </a>
+          </div>
+  
+
+      </div>
+    </div>
+  </nav>
+
+
+   <!-- Barra de Anúncio -->
+   <div class="marquee-container p-1 text-center">
+    <div class="marquee-text">
+       Conheça as melhoras ofertas aqui na KongTech!
+    </div>
+</div>
+
+ 
+    
+  <!-- Vídeo com sobreposição -->
+<div class="container-fluid p-3">
+  <div class="video-container">
+      <video class="video-fullscreen" autoplay muted loop>
+          <source src="video-iphone.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos HTML5.
+      </video>
+
+      <!-- Sobreposição com conteúdo -->
+      <div class="video-overlay">
+          <h1 class="text-primary">Conheça a KongTech</h1>
+          <p>Frete grátis para pedidos acima de R$200</p>
+          <button class="btn btn-call-to-action" id="saibaMaisBtn">Saiba Mais</button>
+          <div class="icon-animation">
+              <i class="fas fa-angle-down"></i>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Seção abaixo do vídeo -->
+<div class="section-below" id="moreInfoSection">
+ 
+  <div class="info-cards">
+      <div class="info-card scroll-animation">
+          <i class="fas fa-shipping-fast"></i>
+          <h3>Frete Grátis</h3>
+          <p>Desfrute de frete grátis para pedidos acima de R$ 200 em todo o Brasil.</p>
+      </div>
+      <div class="info-card scroll-animation">
+          <i class="fas fa-credit-card"></i>
+          <h3>Parcelamento</h3>
+          <p>Parcelamos sua compra em até <b>24x sem juros</b>, facilitando ainda mais sua aquisição.</p>
+      </div>
+      <div class="info-card scroll-animation">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Suporte 24H</h3>
+          <p>Nosso suporte técnico está disponível 24 horas para qualquer dúvida ou assistência.</p>
+      </div>
+  </div>
+</div>
+
+
+   
+
+  <div class="product-area mt-3 m-3 p-2">
+    <div class="product-container">
+        
+      <h2 class="text-center display-3 mb-4 text-white">NOSSOS PRODUTOS</h2>
+      <div class="row g-4">
+      
+           <!-- Produto 1 -->
+        <div class="col-md-3 product-item">
+            <div class="product-square">
+              <img src="../produtos/iphone/iphone-15-pro.png" alt="Produto 1">
+              <a href="individual-iphone-15-pro.html" class="product-link">Iphone 15 Pro - Titanio</a>
+            </div>
+          </div>
+  
+          <!-- Produto 2 -->
+          <div class="col-md-3 product-item">
+            <div class="product-square">
+              <img src="../produtos/iphone/iphone14-pro-max.png" alt="Produto 2">
+              <a href="individual-iphone-14-pro-max.html" class="product-link">Iphone 14 Pro Max - Gold</a>
+            </div>
+          </div>
+  
+          <!-- Produto 3 -->
+          <div class="col-md-3 product-item">
+            <div class="product-square">
+              <img src="../assets/images/aleatorias/galaxy-s23-ultra.png" alt="Produto 3">
+              <a href="individual-galaxy-s23-ultra.html" class="product-link">Galaxy S23 Ultra - Preto</a>
+            </div>
+          </div>
+  
+          <!-- Produto 4 -->
+          <div class="col-md-3 product-item">
+            <div class="product-square">
+              <img src="../assets/images/aleatorias/galaxy-z-fold5.png" alt="Produto 4">
+              <a href="individual-galaxy-fold.html" class="product-link">Galaxy Z Fold5 - Preto</a>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <div id="carouselExampleRide" class="carousel slide margin-carrossel" data-bs-ride="carousel" data-bs-interval="1000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../assets/images/aleatorias/1900XFRETE.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Promoção de Verão">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/aleatorias/cupom1900x.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Frete Grátis">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/aleatorias/promocoes1900px.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Parcelamento Especial">
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/aleatorias/parcela24x1900.png" class="d-block w-100 img-carousel rounded-3 shadow" alt="Parcelamento Especial">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+      <div class="col-md-8">
+          <div class="p-4 text-center rounded shadow" style="background: linear-gradient(135deg, #348bea, #00c3ff); color: white;">
+              <h2>Ganhe 10% de Desconto!</h2>
+              <p>Inscreva-se para receber um cupom de desconto em sua próxima compra.</p>
+              <button type="button" class="btn btn-light text-primary" data-bs-toggle="modal" data-bs-target="#couponModal">
+                  Receber Meu Cupom
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="couponModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="couponModalLabel">Insira seu E-mail</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="couponForm">
+                      <div class="mb-3">
+                          <label for="email" class="form-label">E-mail:</label>
+                          <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Enviar Cupom</button>
+                  </form>
+                  <div class="alert alert-success mt-3 d-none" id="successMessage">
+                      Cupom enviado! Verifique seu e-mail.
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="news-area">
+    <div class="container">
+        <div class="news-container">
+            <h2 class="text-center mb-4">Principais Notícias do Blog</h2>
+            <div class="row">
+
+              <div class="container mt-5">
+                <!--CArtão 1-->
+                  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                      <div class="card ">
+                        <img src="../assets/images/aleatorias/ia.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h3 class="card-title text-primary m-2">Impacto da IA no iPhone 16</h3>
+                          <h6 class="card-subtitle text-black-50 m-2">Melhorias na inteligência artificial do iPhone</h6>
+                          <p class="card-text m-2  mt-3 text-black-50 small"></p>
+                          <a class="btn btn-outline-primary m-2" href="conteudo10.html">Leia mais</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                      <!--CArtão 2-->
+                    <div class="col">
+                      <div class="card">
+                        <img src="../assets/images/aleatorias/5g2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                         <h3 class="card-title text-primary m-2">Iphones 16 e o 5G</h3>
+                          <h6 class="card-subtitle text-black-50 m-2">iPhone 16 e a popularização de celulares 5G</h6>
+                          <p class="card-text m-2  mt-3 text-black-50 small"></p>
+                          <a class="btn btn-outline-primary m-2" href="conteudo11.html">Leia mais</a>
+                        </div>
+                      </div>
+                    </div>
+            
+            
+                      <!--CArtão 3-->
+                    <div class="col">
+                      <div class="card">
+                        <img  src="../assets/images/aleatorias/acessebilidade.jpg" class="card-img-top ">
+                        <div class="card-body">
+                          <h3 class="card-title text-primary m-2">iPhone 16 e a acessibilidade</h3>
+                          <h6 class="card-subtitle text-black-50 m-2">Melhorias para usuários com deficiência</h6>
+                          <p class="card-text m-2  mt-3 text-black-50 small"></p>
+                          <a class="btn btn-outline-primary m-2" href="conteudo12.html">Leia mais</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+  
+  <div class="row">
+
+
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <a href="individual-iphone-15.html"><img src="../produtos/iphone/iphone15.png" class="card-img-top img-fluid" alt="Iphone 15"></a>
+              <div class="card-body">
+                  <h5 class="card-title m-2">Apple iPhone 15 (128 GB) — Verde</h5>
+                  <span class="badge bg-success m-2">ABAIXOU!</span>
+                  <p class="card-text small p-2">O Apple iPhone 15 (128 GB) Verde combina design elegante e desempenho potente. Capture momentos incríveis com sua câmera avançada!</p>
+                  <p>
+                      <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.499,99</strong></span>
+                      <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 5.099,00</span>
+                  </p>
+                  <p class="text-success m-2">Economize <strong>R$ 299,99</strong>!</p>
+                  <div class="btn-container">
+                      <a href="individual-iphone-15.html" class="btn btn-primary m-2">Comprar</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+<!--Card produto 2-->
+
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-iphone-15-pro.html"><img src="../produtos/iphone/iphone-15-pro.png" class="card-img-top"" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Apple iPhone 15 Pro (256 GB) - Titânio </h5>
+          <span class="badge bg-success m-2">ABAIXOU!</span>
+          <p class="card-text small p-2">iPhone 15 Pro (256 GB) em titânio: leve, potente com chip A17 Pro, câmeras avançadas e tela Super Retina XDR. Inovador e estiloso.</p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 7.599,00</strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.099,00</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 2.500,00</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-iphone-15-pro.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!--Card produto 3-->
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-iphone-15-pro-max.html"><img src="../produtos/iphone/iphone15-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Apple iPhone 15 Pro Max (256 GB)</h5>
+          <span class="badge bg-success m-2">ABAIXOU!</span>
+          <p class="card-text small p-2">iPhone 15 Pro Max (256 GB) em titânio azul: desempenho robusto com chip A17 Pro, câmeras de alta qualidade e tela Super Retina XDR. </p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 9.099,00 </strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.999,00</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 1.900,00</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-iphone-15-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!--Card produto 15 plus-->
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-iphone-15-plus.html"><img src="../produtos/iphone/iphone15-plus.png"class="card-img-top" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Apple iPhone 15 Plus (128GB) - Azul</h5>
+          <span class="badge bg-success m-2">ABAIXOU!</span>
+          <p class="card-text small p-2">iPhone 15 Plus (128 GB) em azul: design moderno, câmeras poderosas e desempenho otimizado com chip A16. Perfeito para quem busca mais tela e estilo.</p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$  6.199,00</strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 7.282,90</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 1.083,99</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-iphone-15-plus.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!--Card produto 4-->
+<div class="col-md-4 mb-4">
+<div class="card">
+    <a href="individual-iphone-14.html"><img src="../produtos/iphone/iphone14.png" class="card-img-top" alt="Produto 1"></a>
+    <div class="card-body">
+        <h5 class="card-title m-2">Apple iPhone 14 (128 GB) – Azul</h5>
+        <span class="badge bg-success m-2">ABAIXOU!</span>
+        <p class="card-text small p-2">iPhone 14 (128 GB) em azul: design elegante, câmeras excelentes e desempenho eficiente com chip A15. Ideal para uso diário com estilo.</p>
+        <p>
+            <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.479,99</strong></span>
+            <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 4999,99</span>
+        </p>
+        <p class="text-success m-2">Economize <strong>R$ 519,99</strong>!</p>
+        <div class="btn-container">
+            <a href="individual-iphone-14.html" class="btn btn-primary m-2">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--Card produto 5-->
+<div class="col-md-4 mb-4">
+<div class="card">
+  <a href="individual-iphone-14-plus.html"><img src="../produtos/iphone/iphone14-plus.png"class="card-img-top" alt="Produto 1"></a>
+  <div class="card-body">
+      <h5 class="card-title m-2">Apple iPhone 14 Plus (512GB) - Estelar</h5>
+      <span class="badge bg-success m-2">ABAIXOU!</span>
+      <p class="card-text small p-2">iPhone 14 Plus (512 GB) Estelar: amplo armazenamento, design elegante e câmeras avançadas com chip A15. Ideal para quem busca performance e estilo.</p>
+      <p>
+          <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 6.399,00</strong></span>
+          <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 11.599,00</span>
+      </p>
+      <p class="text-success m-2">Economize <strong>R$ 5.199,99</strong>!</p>
+      <div class="btn-container">
+          <a href="individual-iphone-14-plus.html" class="btn btn-primary m-2">Comprar</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--Card produto 6-->
+<div class="col-md-4 mb-4">
+<div class="card">
+ <a href="individual-iphone-14-pro.html"><img src="../produtos/iphone/iphone14-pro.png" class="card-img-top" alt="Produto 1"></a>
+  <div class="card-body">
+      <h5 class="card-title m-2">Apple iPhone 14 Pro (1TB) - Roxo</h5>
+      <span class="badge bg-success m-2">ABAIXOU!</span>
+      <p class="card-text small p-2">O iPhone 14 Pro 1TB Roxo-profundo combina design elegante e tela Super Retina XDR. Com chip A16 Bionic, oferece desempenho incrível e amplo armazenamento.</p>
+      <p>
+          <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 8.699,00</strong></span>
+          <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 9.999,00</span>
+      </p>
+      <p class="text-success m-2">Economize <strong>R$ 1.299,99</strong>!</p>
+      <div class="btn-container">
+          <a href="individual-iphone-14-pro.html" class="btn btn-primary m-2">Comprar</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--Card produto 7-->
+<div class="col-md-4 mb-4">
+<div class="card">
+  <a href="individual-iphone-14-pro-max.html"><img src="../produtos/iphone/iphone14-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+  <div class="card-body">
+      <h5 class="card-title m-2">Apple iPhone 14 Pro Max (256GB) </h5>
+      <span class="badge bg-success m-2">ABAIXOU!</span>
+      <p class="card-text small p-2">O iPhone 14 Pro Max 256GB Dourado tem design luxuoso e tela de 6,7 polegadas. Com chip A16 Bionic, oferece alto desempenho e bastante espaço.</p>
+      <p>
+          <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 8.299,00</strong></span>
+          <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 9.999,99</span>
+      </p>
+      <p class="text-success m-2">Economize <strong>R$ 1.700,99</strong>!</p>
+      <div class="btn-container">
+          <a href="individual-iphone-14-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--Card produto 8-->
+<div class="col-md-4 mb-4">
+<div class="card">
+  <a href="individual-iphone-13.html"><img src="../produtos/iphone/iphone13.png"class="card-img-top" alt="Produto 1"></a>
+  <div class="card-body">
+      <h5 class="card-title m-2">Apple Iphone 13 (128GB) - Estelar</h5>
+      <span class="badge bg-success m-2">ABAIXOU!</span>
+      <p class="card-text small p-2">Desempenho poderoso com chip A15 Bionic, câmera dupla com modo Noturno e display Super Retina XDR. Duração de bateria incrível para o dia todo.</p>
+      <p>
+          <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 3499,99</strong></span>
+          <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 3999,99</span>
+      </p>
+      <p class="text-success m-2">Economize <strong>R$ 499,99</strong>!</p>
+      <div class="btn-container">
+          <a href="individual-iphone-13.html" class="btn btn-primary m-2">Comprar</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--Card produto 9-->
+<div class="col-md-4 mb-4">
+<div class="card">
+  <a href="individual-iphone-13-mini.html"><img src="../produtos/iphone/iphone13-mini.png"class="card-img-top" alt="Produto 1"></a>
+  <div class="card-body">
+      <h5 class="card-title m-2">iPhone 13 mini (128GB) - Azul </h5>
+      <span class="badge bg-success m-2">ABAIXOU!</span>
+      <p class="card-text small p-2">O iPhone 13 mini 128GB Azul tem design compacto e tela de 5,4 polegadas. Com chip A15 Bionic, oferece ótimo desempenho e armazenamento.</p>
+      <p>
+          <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 3.099,00</strong></span>
+          <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 3.499,99</span>
+      </p>
+      <p class="text-success m-2">Economize <strong>R$ 400,99</strong>!</p>
+      <div class="btn-container">
+          <a href="individual-iphone-13-mini.html" class="btn btn-primary m-2">Comprar</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--Card produto 11-->
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-iphone-13-pro.html"><img src="../produtos/iphone/iphone13-pro.png"class="card-img-top" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Apple iPhone 13 Pro (256 GB) - Sierra</h5>
+          <span class="badge bg-info m-2">LIMITADO</span>
+          <p class="card-text small p-2">O iPhone 13 Pro 256GB Azul Sierra tem design elegante e tela de 6,1 polegadas. Com chip A15 Bionic, oferece alto desempenho e amplo espaço.</p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>10.499,00</strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 10.999,99</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 499,99</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-iphone-13-pro.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+      
+
+
+
+    <!--Card produto 12-->
+<div class="col-md-4 mb-4">
+  <div class="card">
+      <a href="individual-iphone-13-pro-max.html"><img src="../produtos/iphone/iphone13-pro-max.png"class="card-img-top" alt="Produto 1"></a>
+      <div class="card-body">
+          <h5 class="card-title m-2">Iphone 13 Pro Max (256gb) - Gold</h5>
+          <span class="badge bg-danger m-2">SEMINOVO</span>
+          <p class="card-text small p-2">O iPhone 13 Pro 256GB Azul Sierra tem design elegante e tela de 6,1 polegadas. Com chip A15 Bionic, oferece alto desempenho e amplo espaço.</p>
+          <p>
+              <span class="text-primary   p-2" style="font-size: 1.75rem;"><strong>R$ 4.859,99 </strong></span>
+              <span class="text-muted   m-2 mt-3" style="text-decoration: line-through;">R$ 5.399,99</span>
+          </p>
+          <p class="text-success m-2">Economize <strong>R$ 539,99</strong>!</p>
+          <div class="btn-container">
+              <a href="individual-iphone-13-pro-max.html" class="btn btn-primary m-2">Comprar</a>
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+
+<div class="slot-machine-message text-center">
+  <h2 class="mb-3">Gire e descubra ofertas exclusivas!</h2>
+  <p class="lead">Clique no botão e veja qual marca te dará o melhor desconto.</p>
+  <div class="slot-machine-container text-center">
+    <div id="slot" class="slot display-1">Apple</div> <!-- Nome da Marca -->
+    <button id="spinButton" class="btn btn-modern spin-btn mt-4">Girar</button>
+  </div>
+</div>
+
+
+
+<!-- Rodapé -->
+<footer class="footer text-center">
+  <div class="container">
+      <div class="row align-items-center">
+          <!-- Ícones de Redes Sociais -->
+          <div class="col-12 col-md-4 social-icons text-center">
+              <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+              <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+              <a href="https://www.linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+          </div>
+          
+          <!-- Texto do Rodapé -->
+          <div class="col-12 col-md-4 ">
+              <p>&copy; 2024 KongTech. Todos os direitos reservados.</p>
+          </div>
+          <br>
+<br>
+          <div style="margin-top: 50px;" class="col-12 col-md-4 ">
+              <p>&copy; Site da desenvolvedora</p>
+              <a href="aresdev.html"><img src="../logo-marcas/logotipoares.png" style="max-width: 80px;"></a>
+          </div>
+          
+          <!-- Link para Documentação (à direita) -->
+          <div style="margin-left: 450px;" class="col-12 col-md-4 text-center text-md-right">
+              <a href="documentacao.pdf" class="documentation-link">Documentação <i class="fas fa-book"></i></a>
+          </div>
+      </div>
+
+      <!-- Linha Divisória -->
+      <hr style="border-color: #ffffff; margin-top: 40px;">
+
+      <!-- Área de Contatos (ajustada) -->
+      <div class="contact-info">
+          <h5>Informações de Contato</h5><br>
+          <div class="row justify-content-center">
+              <div class="col-12 col-md-4 contact-item">
+                  <i class="fas fa-map-marker-alt"></i> R. Bueno Brandão, 74 - Guarulhos (SP)   
+               </div>
+              <div class="col-12 col-md-4 contact-item">
+                  <i class="fas fa-phone-alt"></i> (11) 98820-2529
+              </div>
+              <div class="col-12 col-md-4 contact-item">
+                  <i class="fas fa-envelope"></i> kongtechsuporte@gmail.com
+              </div>
+              <div class="col-12 col-md-4 institutional-links text-center">
+                <a href="institucionalmae.html"><i class="fas fa-building"></i> Páginas Institucionais</a>
+            </div>
+          </div>
+      </div>
+     
+</footer>
+
+
+
+
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+ // Adiciona o evento de clique no botão "Saiba Mais"
+    document.getElementById('saibaMaisBtn').addEventListener('click', function() {
+        // Faz a rolagem suave até a seção com id "moreInfoSection"
+        document.getElementById('moreInfoSection').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+
+
+       // Lista de marcas e suas URLs correspondentes
+    const brands = [
+        { name: "Apple", url: "pagina-iphone-1.html" },
+        { name: "Samsung", url: "pagina-samsung.html" },
+        { name: "Motorola", url: "pagina-motorola.html" }
+        
+    ];
+
+    const slot = document.getElementById('slot');
+    const spinButton = document.getElementById('spinButton');
+
+    function randomBrand() {
+        return brands[Math.floor(Math.random() * brands.length)];
+    }
+
+    async function spinMachine() {
+        spinButton.disabled = true;
+
+        // Animação de "girar"
+        for (let i = 0; i < 10; i++) { // Gira 10 vezes
+            setTimeout(() => {
+                const selectedBrand = randomBrand(); // Escolhe uma marca aleatória
+                slot.innerHTML = `<span class="brand-name">${selectedBrand.name}</span>`; // Atualiza o slot com a marca
+            }, i * 200); // Atualiza a marca a cada 200ms
+        }
+
+        // Espera um tempo e para a animação
+        await new Promise((resolve) => {
+            setTimeout(resolve, 1900); // Tempo total de giro
+        });
+
+        const finalBrand = randomBrand(); // Escolhe uma marca final
+        slot.innerHTML = `<span class="brand-name">${finalBrand.name}</span>`; // Atualiza o slot com a marca final
+
+        spinButton.disabled = false;
+
+        // Redireciona após 1 segundo
+        setTimeout(() => {
+            window.location.href = finalBrand.url; 
+        }, 1000);
+    }
+
+    spinButton.addEventListener("click", spinMachine);
+
+
+    document.getElementById("couponForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitar o comportamento padrão do formulário
+        document.getElementById("successMessage").classList.remove("d-none");
+        document.getElementById("couponForm").reset(); // Limpa o formulário
+        setTimeout(() => {
+            var modal = bootstrap.Modal.getInstance(document.getElementById('couponModal'));
+            modal.hide(); // Fecha o modal após alguns segundos
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
